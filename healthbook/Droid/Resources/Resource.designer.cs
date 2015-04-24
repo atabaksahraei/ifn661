@@ -26,8 +26,10 @@ namespace healthbook.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::SQLite.Resource.String.ApplicationName = global::healthbook.Droid.Resource.String.ApplicationName;
-			global::SQLite.Resource.String.Hello = global::healthbook.Droid.Resource.String.Hello;
+			global::GalaSoft.MvvmLight.Resource.String.ApplicationName = global::healthbook.Droid.Resource.String.ApplicationName;
+			global::GalaSoft.MvvmLight.Resource.String.Hello = global::healthbook.Droid.Resource.String.Hello;
+			global::Xamarin.Forms.Platform.Resource.String.ApplicationName = global::healthbook.Droid.Resource.String.ApplicationName;
+			global::Xamarin.Forms.Platform.Resource.String.Hello = global::healthbook.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Attribute

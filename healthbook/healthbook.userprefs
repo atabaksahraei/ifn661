@@ -1,11 +1,10 @@
-﻿<Properties StartupItem="Droid/healthbook.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.3" />
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties StartupItem="iOS/healthbook.iOS.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.3" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="healthbook/Model/DAL/DatabaseManager.cs">
     <Files>
-      <File FileName="healthbook/healthbook.cs" Line="46" Column="7" />
-      <File FileName="healthbook/Model/DAL/Database Manager.cs" Line="1" Column="1" />
-      <File FileName="healthbook/Model/SAL/REST.cs" Line="5" Column="22" />
-      <File FileName="healthbook/Model/BL/Manager.cs" Line="1" Column="1" />
+      <File FileName="healthbook/healthbook.cs" Line="48" Column="6" />
+      <File FileName="healthbook/Model/SAL/WebServices.cs" Line="2" Column="11" />
+      <File FileName="healthbook/Model/DAL/DatabaseManager.cs" Line="77" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,14 +12,23 @@
           <Node name="healthbook" expanded="True">
             <Node name="Model" expanded="True">
               <Node name="BL" expanded="True" />
-              <Node name="DAL" expanded="True" />
+              <Node name="DAL" expanded="True">
+                <Node name="DatabaseManager.cs" selected="True" />
+              </Node>
               <Node name="SAL" expanded="True" />
             </Node>
+            <Node name="View" expanded="True">
+              <Node name="Welcome.xaml" expanded="True" />
+            </Node>
+            <Node name="ViewModel" expanded="True" />
+          </Node>
+          <Node name="healthbook.Droid" expanded="True">
+            <Node name="Packages" expanded="True" />
           </Node>
           <Node name="healthbook.iOS" expanded="True">
-            <Node name="References" expanded="True">
-              <Node name="Xamarin.iOS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065" selected="True" />
-            </Node>
+            <Node name="References" expanded="True" />
+            <Node name="Packages" expanded="True" />
+            <Node name="ViewModel" expanded="True" />
           </Node>
         </State>
       </Pad>

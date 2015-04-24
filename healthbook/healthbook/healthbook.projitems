@@ -13,6 +13,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Manager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SAL\WebServices.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DAL\DatabaseManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\WelcomeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SAL\SQLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SAL\SQLiteAsync.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
@@ -22,5 +28,10 @@
     <Folder Include="$(MSBuildThisFileDirectory)Model\DAL\" />
     <Folder Include="$(MSBuildThisFileDirectory)Model\BL\" />
     <Folder Include="$(MSBuildThisFileDirectory)Model\BL\Entity\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\Welcome.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

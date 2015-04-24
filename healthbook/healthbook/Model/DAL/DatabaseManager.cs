@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using SQLite;
-using System.IO;
+
 
 
 namespace healthbook.Model.DAL
@@ -71,10 +71,10 @@ namespace healthbook.Model.DAL
 			#if __ANDROID__
 			if (!String.IsNullOrEmpty (pathToDatabase)) {
 				SQLiteConnection con;
-				bool exist = File.Exists (pathToDatabase);
+				bool exist = System.IO.File.Exists (pathToDatabase);
 				if (!exist) {
 					//Create a sqlite file if not exist
-					File.Create (pathToDatabase);
+					System.IO.File.Create (pathToDatabase);
 				} 
 
 				con = new SQLiteConnection (pathToDatabase);
