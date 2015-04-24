@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace healthbook
 {
-	public class App : Application, ContentPage
+	public class App : Application
 	{
 		private static readonly string COLOR_GREEN_HEALTH = "84B001";
 

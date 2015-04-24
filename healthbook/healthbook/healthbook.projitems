@@ -10,9 +10,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)healthbook.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\DAL\Database Manager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\SAL\REST.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Manager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SAL\WebServices.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DAL\DatabaseManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
