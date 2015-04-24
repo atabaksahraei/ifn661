@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="iOS/healthbook.iOS.csproj">
+﻿<Properties StartupItem="Droid/healthbook.Droid.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.3" />
   <MonoDevelop.Ide.Workbench>
     <Files>
