@@ -13,12 +13,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Manager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SAL\WebServices.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DAL\DatabaseManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\Welcome.xaml.cs">
-      <DependentUpon>Welcome.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\WelcomeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SAL\SQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\SAL\SQLiteAsync.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

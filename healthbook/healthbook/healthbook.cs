@@ -27,9 +27,10 @@ namespace healthbook
 	
 			
 
+			MainPage = new Welcome ();
 		
 			// The root page of your application
-			MainPage = new ContentPage {
+		/*	MainPage = new ContentPage {
 				
 				BackgroundColor = Color.FromHex(COLOR_GREEN_HEALTH),
 				Content = new StackLayout {
@@ -45,7 +46,7 @@ namespace healthbook
 						loginButton
 					}
 				}
-			};
+			};*/
 
 
 		}

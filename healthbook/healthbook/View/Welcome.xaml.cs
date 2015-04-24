@@ -10,6 +10,7 @@ namespace healthbook
 		public Welcome ()
 		{
 			InitializeComponent ();
+			//Set Bindingcontext
 		}
 	}
 }
