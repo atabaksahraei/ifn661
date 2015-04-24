@@ -1,0 +1,12 @@
+﻿<Properties StartupItem="Droid/healthbook.Droid.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.myNexus5" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="healthbook/healthbook.cs">
+    <Files>
+      <File FileName="healthbook/healthbook.cs" Line="17" Column="57" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
