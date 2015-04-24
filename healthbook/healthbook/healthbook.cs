@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace healthbook
 {
-	public class App : Application
+	public class App : Application, ContentPage
 	{
 		private static readonly string COLOR_GREEN_HEALTH = "84B001";
 
@@ -18,7 +18,7 @@ namespace healthbook
 			};
 
 			loginButton.Clicked += async (sender, e) => {
-				Console.WriteLine("BÄÄM");
+				
 			};
 
 			Image logo = new Image {
@@ -46,6 +46,7 @@ namespace healthbook
 					}
 				}
 			};
+
 
 		}
 

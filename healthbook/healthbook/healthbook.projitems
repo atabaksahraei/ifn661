@@ -10,5 +10,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)healthbook.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\DAL\Database Manager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\SAL\REST.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Manager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Model\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\" />
+    <Folder Include="$(MSBuildThisFileDirectory)View\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Model\SAL\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Model\DAL\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Model\BL\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Model\BL\Entity\" />
   </ItemGroup>
 </Project>
