@@ -10,6 +10,11 @@ namespace healthbook.ViewModel
 //			_test = string.Empty;
 			_test = "Welcome to Helthbook!";
 		}
+		public string Qut{
+			get{
+				return "QUT";
+			}
+		}
 
 		public string Test
 		{
@@ -21,11 +26,7 @@ namespace healthbook.ViewModel
 				if (_test != null && _test == value) {
 					return;
 				}
-				if (Set (() => Test, ref _test, value)) {
-					RaisePropertyChanged (() => Test);
-				}
-				_test = value;
-				RaisePropertyChanged ("Test");
+				Set (() => Test, ref _test, value);
 			}
 		}
 	}
