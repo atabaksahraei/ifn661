@@ -8,7 +8,8 @@ namespace healthbook
 		private string _test;
 		public WelcomeViewModel ()
 		{
-			_test = null;
+//			_test = string.Empty;
+			_test = "Hello World";
 		}
 
 		public string Test
@@ -18,12 +19,12 @@ namespace healthbook
 			}
 			set{
 				
-//				if (_test != null && _test == value) {
-//					return;
-//				}
-//				if (Set (() => Test, ref _test, value)) {
-//					RaisePropertyChanged (() => Test);
-//				}
+				if (_test != null && _test == value) {
+					return;
+				}
+				if (Set (() => Test, ref _test, value)) {
+					RaisePropertyChanged (() => Test);
+				}
 				_test = value;
 				RaisePropertyChanged ("Test");
 			}

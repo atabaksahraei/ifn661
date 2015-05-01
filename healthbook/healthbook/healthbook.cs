@@ -11,19 +11,19 @@ namespace healthbook
 		public App ()
 		{
 
-			Button loginButton = new Button {
-				Text = "Start",
-				TextColor = Color.FromHex ("FFFFFF"),
-				BackgroundColor = Color.FromHex (COLOR_GREEN_HEALTH)
-			};
-
-			loginButton.Clicked += async (sender, e) => {
-				
-			};
-
-			Image logo = new Image {
-				Source = "Icon-76"
-			};
+//			Button loginButton = new Button {
+//				Text = "Start",
+//				TextColor = Color.FromHex ("FFFFFF"),
+//				BackgroundColor = Color.FromHex (COLOR_GREEN_HEALTH)
+//			};
+//
+//			loginButton.Clicked += async (sender, e) => {
+//				
+//			};
+//
+//			Image logo = new Image {
+//				Source = "Icon-76"
+//			};
 	
 			
 
