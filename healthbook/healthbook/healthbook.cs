@@ -27,7 +27,10 @@ namespace healthbook
 	
 			
 
-			MainPage = new Welcome ();
+			var nv = new NavigationPage (new Welcome()) {Title="Healthbook"};
+			nv.BarBackgroundColor = Color.FromHex("84B001");
+			nv.BarTextColor = Color.White;
+			MainPage = nv;
 		
 			// The root page of your application
 		/*	MainPage = new ContentPage {

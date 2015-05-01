@@ -1,12 +1,11 @@
-﻿using GalaSoft.MvvmLight;
-using System;
+﻿using System;
 
-namespace healthbook
+namespace healthbook.ViewModel
 {
-	public class WelcomeViewModel : ViewModelBase
+	public class WelcomeViewModel:ViewModelHealthBase
 	{
-		private string _test;
-		public WelcomeViewModel ()
+		private  string _test;
+		public WelcomeViewModel () : base()
 		{
 //			_test = string.Empty;
 			_test = "Welcome to Helthbook!";

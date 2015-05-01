@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using healthbook.ViewModel;
 
 namespace healthbook
 {
@@ -19,8 +20,12 @@ namespace healthbook
 		{
 			BindingContext = new WelcomeViewModel();
 			InitializeComponent ();
-
 		}
+
+		void btnStartClicked(object sender, EventArgs args) {
+			 Navigation.PushAsync (new Login ());
+		}
+
 	}
 }
 
