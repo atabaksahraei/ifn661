@@ -9,7 +9,7 @@ namespace healthbook
 		public WelcomeViewModel ()
 		{
 //			_test = string.Empty;
-			_test = "Hello World";
+			_test = "Welcome to Helthbook!";
 		}
 
 		public string Test
