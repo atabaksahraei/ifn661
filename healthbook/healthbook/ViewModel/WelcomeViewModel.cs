@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using System;
 
 namespace healthbook
 {
@@ -16,12 +17,15 @@ namespace healthbook
 				return _test;
 			}
 			set{
-				if (_test != null && _test == value) {
-					return;
-				}
-				if (Set (() => Test, ref _test, value)) {
-					RaisePropertyChanged (() => Test);
-				}
+				
+//				if (_test != null && _test == value) {
+//					return;
+//				}
+//				if (Set (() => Test, ref _test, value)) {
+//					RaisePropertyChanged (() => Test);
+//				}
+				_test = value;
+				RaisePropertyChanged ("Test");
 			}
 		}
 	}
