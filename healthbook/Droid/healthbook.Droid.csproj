@@ -112,6 +112,7 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\healthkit.png" />
   </ItemGroup>
   <Import Project="..\healthbook\healthbook.projitems" Label="Shared" Condition="Exists('..\healthbook\healthbook.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
