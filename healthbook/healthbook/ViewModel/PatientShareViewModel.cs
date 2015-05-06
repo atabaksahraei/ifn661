@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace healthbook
+namespace healthbook.ViewModel
 {
-	public class PatientShareViewModel
+	public class PatientShareViewModel : ViewModelHealthBase
 	{
 		public PatientShareViewModel ()
 		{

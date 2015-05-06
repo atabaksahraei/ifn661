@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace healthbook
+namespace healthbook.ViewModel
 {
-	public class PatientViewModel
+	public class PatientViewModel : ViewModelHealthBase
 	{
 		public PatientViewModel ()
 		{
