@@ -27,12 +27,18 @@ namespace healthbook
 			//Toolbar
 			ToolbarItems.Add(new ToolbarItem("refresh", null, async () =>
 				{
-
+					 Vm.refreshData();
 				}));
 		}
 		#endregion
 
 		#region listEvents
+		public void OnRefresh(object sender, EventArgs e) {
+			listOfPatients.IsRefreshing = true;
+			Vm.refreshData();
+			listOfPatients.IsRefreshing = false;
+		}
+
 		public async void OnItemSelected (object sender, SelectedItemChangedEventArgs e) {
 			if (e.SelectedItem == null) return; // has been set to null, do not 'process' tapped event
 
@@ -50,12 +56,11 @@ namespace healthbook
 		}
 
 		public void OnDelete (object sender, EventArgs e) {
-			var mi = ((MenuItem)sender);
+			var currentPatient = (Patient)(((MenuItem)sender).CommandParameter);
 
-			Debug.WriteLine ("delete " + mi.CommandParameter.ToString ());
-			//Vm.CoastCatItems.RemoveAll (x => x.Name == ((CostCatItem) mi.CommandParameter).Name);
-			DisplayAlert("Delete Context Action", mi.CommandParameter + " delete context action", "OK");
-			//items.Remove (mi.CommandParameter.ToString());
+			Vm.Delete(currentPatient);
+			Debug.WriteLine (String.Format("delete {0}", currentPatient.Name));
+			DisplayAlert("Delete Patient", String.Format ("Patient {0} deleted!", currentPatient.Name), "OK");
 		}
 		#endregion
 	}

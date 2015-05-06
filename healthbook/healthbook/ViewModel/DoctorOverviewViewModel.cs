@@ -25,7 +25,15 @@ namespace healthbook.ViewModel
 			refreshData ();
 		}
 
-		async void refreshData()
+		public async void Delete(Patient p)
+		{
+			await Manager.Instance.DeletePatientAsync (p);
+			Patients = Manager.Instance.Items;
+			RaisePropertyChanged ("Patients");
+
+		}
+
+		public async void refreshData()
 		{
 			await Manager.Instance.RefreshDataAsync ();
 			Patients = Manager.Instance.Items;

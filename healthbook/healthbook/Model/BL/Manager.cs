@@ -102,13 +102,25 @@ namespace healthbook.Model.BL
 		#endregion
 
 		#region datamanipulation
-		public async Task InsertPatientItemAsync (Patient patientItem)
+		public async Task InsertPatientAsync (Patient patientItem)
 		{
 			try {                
 				await patientTable.InsertAsync (patientItem); // Insert a new TodoItem into the local database. 
 				await SyncAsync(); // send changes to the mobile service
 
 				Items.Add (patientItem); 
+
+			} catch (MobileServiceInvalidOperationException e) {
+				Console.Error.WriteLine (@"ERROR {0}", e.Message);
+			}
+		}
+
+		public async Task DeletePatientAsync (Patient patientItem)
+		{
+			try {                
+				await patientTable.DeleteAsync (patientItem); // Insert a new TodoItem into the local database. 
+				await SyncAsync(); // send changes to the mobile service
+				Items.RemoveAll((x) => x.Id == patientItem.Id);
 
 			} catch (MobileServiceInvalidOperationException e) {
 				Console.Error.WriteLine (@"ERROR {0}", e.Message);

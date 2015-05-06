@@ -7,7 +7,9 @@
 			x:Name="listOfPatients" 
 			ItemsSource="{Binding Patients, Mode=TwoWay}"
 			ItemSelected="OnItemSelected"
-			IsPullToRefreshEnabled="true">
+			IsPullToRefreshEnabled="true"
+			Refreshing="OnRefresh"
+			>
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
