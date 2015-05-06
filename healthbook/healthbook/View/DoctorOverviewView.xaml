@@ -3,7 +3,11 @@
 	<ContentPage.Content>
 		<StackLayout>
 			<Label Text="Doctor Overview" TextColor="#84B001" />
-			<ListView x:Name="listOfPatients" ItemsSource="{Binding Patients, Mode=TwoWay}" ItemSelected="OnItemSelected" IsPullToRefreshEnabled="true">
+			<ListView 
+			x:Name="listOfPatients" 
+			ItemsSource="{Binding Patients, Mode=TwoWay}"
+			ItemSelected="OnItemSelected"
+			IsPullToRefreshEnabled="true">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
@@ -13,11 +17,11 @@
 							</ViewCell.ContextActions>
 							<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
 								<StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Horizontal">
-									<Image Source="ic_placeholder.png" />
+									<Image Source="{Binding Image, Mode=TwoWay}" />
 									<StackLayout Orientation="Vertical" VerticalOptions="Start">
 										<StackLayout Orientation="Horizontal">
 											<Label Text="{Binding Name, Mode=TwoWay}" YAlign="Center" FontSize="Medium" />
-											<Label Text="@12:00pm" YAlign="Center" FontSize="Medium" />
+											<Label Text="@12:00pm" YAlign="Center" FontSize="Small" />
 										</StackLayout>
 										<Image Source="ic_placeholder.png" WidthRequest="10"/>
 									</StackLayout>
