@@ -33,6 +33,8 @@
       <DependentUpon>DoctorOverviewView.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Entity\Patient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Entity\Meeting.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Entity\Doctor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

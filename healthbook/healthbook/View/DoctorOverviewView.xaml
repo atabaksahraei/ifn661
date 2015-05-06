@@ -21,7 +21,7 @@
 									<StackLayout Orientation="Vertical" VerticalOptions="Start">
 										<StackLayout Orientation="Horizontal">
 											<Label Text="{Binding Name, Mode=TwoWay}" YAlign="Center" FontSize="Medium" />
-											<Label Text="@12:00pm" YAlign="Center" FontSize="Small" />
+											<Label Text="{Binding NextMeeting, Mode=TwoWay}" YAlign="Center" FontSize="Small" />
 										</StackLayout>
 										<Image Source="ic_placeholder.png" WidthRequest="10"/>
 									</StackLayout>

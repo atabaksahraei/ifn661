@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="healthbook.PatientView"
-Title="PATIENT_NAME">
+Title="{Binding Patient.Name, Mode=TwoWay}">
 	<ContentPage.Content>
-	<Label Text="Patient" TextColor="#84B001" />
+	<StackLayout Orientation="Horizontal">
+		<Image Source="{Binding Patient.Image, Mode=TwoWay}" WidthRequest="50"/>
+		<Label Text="{Binding Patient.Name, Mode=TwoWay}" FontSize="Small" TextColor="#84B001" VerticalOptions="Center"/>
+	</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

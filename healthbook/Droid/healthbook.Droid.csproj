@@ -107,6 +107,7 @@
     <Folder Include="Resources\layout\" />
     <Folder Include="Resources\values\" />
     <Folder Include="Resources\drawable\" />
+    <Folder Include="CustomRenderer\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
@@ -210,6 +211,8 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\tab_unselected_healthkit.9.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\tab_unselected_pressed_healthkit.9.png" />
     <AndroidResource Include="Resources\values\styles_healthkit.xml" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_signal.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_signal.png" />
   </ItemGroup>
   <Import Project="..\healthbook\healthbook.projitems" Label="Shared" Condition="Exists('..\healthbook\healthbook.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />

@@ -173,6 +173,7 @@
     <BundleResource Include="Resources\ic_patient.png" />
     <BundleResource Include="Resources\ic_doc.png" />
     <BundleResource Include="Resources\ic_logo.png" />
+    <BundleResource Include="Resources\ic_signal.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
