@@ -92,7 +92,6 @@ namespace healthbook.Model.BL
 				// This code refreshes the entries in the list view by querying the local TodoItems table.
 				// The query excludes completed TodoItems
 				Items = await patientTable.ToListAsync ();
-				String wait= "fffff";
 			} catch (MobileServiceInvalidOperationException e) {
 				Console.Error.WriteLine (@"ERROR {0}", e.Message);
 				return null;
