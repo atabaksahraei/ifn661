@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="healthbook.WelcomeView" BackgroundColor="#84B001">
+	<StackLayout Padding="20" VerticalOptions = "Center">
+		<Image Source="ic_logo.png" WidthRequest="50"/>
+		<Label Text="{Binding Test}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White" />
+
+		<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="50">
+			<StackLayout Orientation="Vertical" VerticalOptions="Center">
+				<Image Source="ic_patient.png" WidthRequest="50"/>
+				<Button Text="Patient" TextColor="White" BackgroundColor="#84B001" Clicked="btnPatientClicked"/>
+			</StackLayout>
+
+			<StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="25">
+				<Image Source="ic_doc.png" WidthRequest="50"/>
+				<Button Text="Doctor" TextColor="White" BackgroundColor="#84B001" Clicked="btnDocClicked"/>
+			</StackLayout>
+
+		</StackLayout>
+	</StackLayout>
+</ContentPage>

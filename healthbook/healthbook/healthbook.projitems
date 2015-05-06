@@ -14,24 +14,24 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\SAL\WebServices.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DAL\DatabaseManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\WelcomeViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\Welcome.xaml.cs">
-      <DependentUpon>Welcome.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelHealthBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DAL\SQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DAL\SQLiteAsync.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\DoctorOverview.xaml.cs">
-      <DependentUpon>DoctorOverview.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)View\Patient.xaml.cs">
-      <DependentUpon>Patient.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)View\PatientShare.xaml.cs">
-      <DependentUpon>PatientShare.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DoctorOverviewViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PatientViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PatientShareViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\PatientView.xaml.cs">
+      <DependentUpon>PatientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\PatientShareView.xaml.cs">
+      <DependentUpon>PatientShareView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\WelcomeView.xaml.cs">
+      <DependentUpon>WelcomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\DoctorOverviewView.xaml.cs">
+      <DependentUpon>DoctorOverviewView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
@@ -43,16 +43,16 @@
     <Folder Include="$(MSBuildThisFileDirectory)Model\BL\Entity\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\Welcome.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\PatientView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\DoctorOverview.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\PatientShareView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\Patient.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\WelcomeView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\PatientShare.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\DoctorOverviewView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

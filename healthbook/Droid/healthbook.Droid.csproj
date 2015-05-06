@@ -118,6 +118,13 @@
     <AndroidResource Include="Resources\drawable-hdpi\ic_placeholder.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_placeholder.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_placeholder.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_placeholder_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_patient.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_patient.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_patient.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_doc.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_doc.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_doc.png" />
   </ItemGroup>
   <Import Project="..\healthbook\healthbook.projitems" Label="Shared" Condition="Exists('..\healthbook\healthbook.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />

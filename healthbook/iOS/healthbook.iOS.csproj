@@ -169,6 +169,10 @@
     <BundleResource Include="Resources\Icon-76%403x.png" />
     <BundleResource Include="Resources\Icon76.png" />
     <BundleResource Include="Resources\ic_placeholder.png" />
+    <BundleResource Include="Resources\ic_placeholder_white.png" />
+    <BundleResource Include="Resources\ic_patient.png" />
+    <BundleResource Include="Resources\ic_doc.png" />
+    <BundleResource Include="Resources\ic_logo.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
