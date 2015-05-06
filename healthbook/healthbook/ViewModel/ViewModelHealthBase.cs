@@ -7,6 +7,7 @@ namespace healthbook.ViewModel
 	{
 		public ViewModelHealthBase () : base()
 		{
+			//bonny test
 		}
 	}
 }
