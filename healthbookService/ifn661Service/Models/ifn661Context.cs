@@ -39,6 +39,8 @@ namespace ifn661Service.Models
                 new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
         }
+
+        public System.Data.Entity.DbSet<ifn661Service.DataObjects.Patient> Patients { get; set; }
     }
 
 }
