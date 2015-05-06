@@ -35,6 +35,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Entity\Patient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Entity\Meeting.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Entity\Doctor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Services\IiBeaconService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
@@ -44,6 +45,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Model\DAL\" />
     <Folder Include="$(MSBuildThisFileDirectory)Model\BL\" />
     <Folder Include="$(MSBuildThisFileDirectory)Model\BL\Entity\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModel\Services\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\PatientView.xaml">
