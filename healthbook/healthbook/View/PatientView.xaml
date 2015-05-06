@@ -3,7 +3,7 @@
 Title="{Binding Patient.Name, Mode=TwoWay}">
 	<ContentPage.Content>
 	<StackLayout Orientation="Horizontal">
-		<Image Source="{Binding Patient.Image, Mode=TwoWay}" />
+		<Image Source="{Binding Patient.Image, Mode=TwoWay}"/>
 		<Label Text="{Binding Patient.Name, Mode=TwoWay}" FontSize="Small" TextColor="#84B001" VerticalOptions="Center"/>
 	</StackLayout>
 	</ContentPage.Content>
