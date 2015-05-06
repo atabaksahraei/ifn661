@@ -18,8 +18,7 @@ namespace healthbook
 		public PatientView (Patient patient)
 		{
 			InitializeComponent ();
-			BindingContext = new PatientViewModel ();
-			Vm.Patient = patient;
+			BindingContext = new PatientViewModel (patient);
 			ToolbarItems.Add(new ToolbarItem("refresh", null, async () =>
 				{
 
