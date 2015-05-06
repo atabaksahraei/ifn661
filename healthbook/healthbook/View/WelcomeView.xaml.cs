@@ -11,14 +11,6 @@ namespace healthbook
 	public partial class WelcomeView : ContentPage
 	{
 		
-		private IMobileServiceSyncTable<Item> todoTable;
-
-		public class Item
-		{
-			public string Id { get; set; }
-			public string Text { get; set; }
-		}
-
 		public WelcomeViewModel Vm
 		{
 			get
