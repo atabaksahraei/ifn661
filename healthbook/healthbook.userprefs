@@ -1,38 +1,12 @@
 ﻿<Properties StartupItem="iOS/healthbook.iOS.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.3" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="healthbook/Model/DAL/DatabaseManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.3" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.cs">
     <Files>
-      <File FileName="healthbook/healthbook.cs" Line="48" Column="6" />
-      <File FileName="healthbook/Model/SAL/WebServices.cs" Line="2" Column="11" />
-      <File FileName="healthbook/Model/DAL/DatabaseManager.cs" Line="77" Column="18" />
+      <File FileName="iOS/Main.cs" Line="1" Column="1" />
+      <File FileName="healthbook/healthbook.cs" Line="1" Column="1" />
+      <File FileName="healthbook/View/Welcome.xaml.cs" Line="1" Column="1" />
+      <File FileName="../../../Downloads/XamariniOS/TryMobileApp/QSTodoService.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="healthbook" expanded="True">
-            <Node name="Model" expanded="True">
-              <Node name="BL" expanded="True" />
-              <Node name="DAL" expanded="True">
-                <Node name="DatabaseManager.cs" selected="True" />
-              </Node>
-              <Node name="SAL" expanded="True" />
-            </Node>
-            <Node name="View" expanded="True">
-              <Node name="Welcome.xaml" expanded="True" />
-            </Node>
-            <Node name="ViewModel" expanded="True" />
-          </Node>
-          <Node name="healthbook.Droid" expanded="True">
-            <Node name="Packages" expanded="True" />
-          </Node>
-          <Node name="healthbook.iOS" expanded="True">
-            <Node name="References" expanded="True" />
-            <Node name="Packages" expanded="True" />
-            <Node name="ViewModel" expanded="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

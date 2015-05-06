@@ -18,12 +18,20 @@
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelHealthBase.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DAL\SQLite.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\DAL\SQLiteAsync.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)View\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)View\DoctorOverview.xaml.cs">
+      <DependentUpon>DoctorOverview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\Patient.xaml.cs">
+      <DependentUpon>Patient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\PatientShare.xaml.cs">
+      <DependentUpon>PatientShare.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\DoctorOverviewViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PatientViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PatientShareViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
@@ -38,7 +46,13 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\Welcome.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\Login.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\DoctorOverview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\Patient.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\PatientShare.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

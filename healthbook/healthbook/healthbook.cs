@@ -1,13 +1,17 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.Diagnostics;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace healthbook
 {
 	public class App : Application
 	{
 		private static readonly string COLOR_GREEN_HEALTH = "84B001";
-
+//		public static MobileServiceClient MobileService = new MobileServiceClient(
+//			"https://ifn662.azure-mobile.net/",
+//			"GhwSKrHYueKIcXOyEyhYNvvIRCUfyF79");
+		
 		public App ()
 		{
 
