@@ -15,20 +15,13 @@ namespace healthbook.ViewModel
 		public DoctorOverviewViewModel ()
 		{
 			Patients = new List<Patient> ();
-			initData ();
-
 		}
 
-		 async void initData ()
-		{
-			await Manager.Instance.InitializeStoreAsync ();
-			refreshData ();
-		}
 
 		public async void Delete(Patient p)
 		{
 			await Manager.Instance.DeletePatientAsync (p);
-			Patients = Manager.Instance.Items;
+			Patients = Manager.Instance.PatientItems;
 			RaisePropertyChanged ("Patients");
 
 		}
@@ -36,7 +29,7 @@ namespace healthbook.ViewModel
 		public async void refreshData()
 		{
 			await Manager.Instance.RefreshDataAsync ();
-			Patients = Manager.Instance.Items;
+			Patients = Manager.Instance.PatientItems;
 			RaisePropertyChanged ("Patients");
 		}
 	}

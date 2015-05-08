@@ -36,6 +36,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Entity\Meeting.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Entity\Doctor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Services\IiBeaconService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Entity\AppMode.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />

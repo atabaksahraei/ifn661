@@ -1,4 +1,5 @@
 ﻿using System;
+using healthbook.Model.BL;
 
 namespace healthbook.ViewModel
 {
@@ -9,15 +10,15 @@ namespace healthbook.ViewModel
 
 		public PatientShareViewModel ()
 		{
-			Me = new Patient () {
-				Name = "Mark",
-				Image = "http://www.fatosdesconhecidos.com.br/wp-content/uploads/2014/11/06162144983530.jpg"
-			};
-
-			Doc = new Doctor () {
-				Name = "Dr John Corfe",
-				Image = "http://completedentalguide.co.uk/wp-content/uploads/2013/12/should-I-go-to-the-dentist-or-doctors.png"
-			};
+			refresh ();
+		}
+		public async void refresh()
+		{
+			await Manager.Instance.RefreshDataAsync();
+			Me = Manager.Instance.MePatient;
+			Doc = Manager.Instance.MeDoctor;
+			RaisePropertyChanged ("Me");
+			RaisePropertyChanged ("Doc");
 		}
 	}
 }

@@ -31,6 +31,7 @@ namespace healthbook
 			nv.BarBackgroundColor = Color.FromHex("84B001");
 			nv.BarTextColor = Color.White;
 			App.Instance.MainPage = nv;
+			Vm.SetAppData ("Mark", AppMode.Patient);
 		}
 
 		async void btnDocClicked(object sender, EventArgs args) {
@@ -38,6 +39,7 @@ namespace healthbook
 			nv.BarBackgroundColor = Color.FromHex("84B001");
 			nv.BarTextColor = Color.White;
 			App.Instance.MainPage = nv;
+			Vm.SetAppData ("Dr. Bonny", AppMode.Doctor);
 		}
 
 	}

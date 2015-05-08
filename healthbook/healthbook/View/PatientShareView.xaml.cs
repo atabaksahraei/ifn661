@@ -19,7 +19,7 @@ namespace healthbook
 			BindingContext = new PatientShareViewModel ();
 			ToolbarItems.Add(new ToolbarItem("refresh", null, async () =>
 				{
-					
+					Vm.refresh();	
 				}));
 		}
 	}
