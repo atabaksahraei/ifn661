@@ -26,6 +26,7 @@ namespace healthbook.Model.BL
 		private static Manager me = null;
 		private MobileServiceClient client;
 		private IMobileServiceSyncTable<Patient> patientTable;
+		private IMobileServiceSyncTable<Doctor> docTable;
 		public List<Patient> Items { get; private set;}
 
 		#endregion
@@ -47,7 +48,10 @@ namespace healthbook.Model.BL
 		{
 			client = new MobileServiceClient(applicationURL, applicationKey);
 			CurrentPlatform.Init ();
+
+			#if __IOS__
 			SQLitePCL.CurrentPlatform.Init(); 
+			#endif
 
 			patientTable = client.GetSyncTable <Patient> ();
 			Items = new List<Patient> ();
