@@ -41,6 +41,16 @@ namespace ifn661Service
                 context.Set<TodoItem>().Add(todoItem);
             }
 
+            List<Doctor> docItems = new List<Doctor>
+            {
+               new Doctor(){Name="Dr. Bonny", Image="https://pbs.twimg.com/profile_images/3402491976/ebdcb1f3f9278fd540b2b6d2191e46b7_400x400.jpeg"}
+            };
+            
+            foreach (Doctor docItem in docItems)
+            {
+                context.Set<Doctor>().Add(docItem);
+            }
+
             List<Patient> patients = new List<Patient>()
             {
                 new Patient() { Name = "Mark", Image = "http://www.fatosdesconhecidos.com.br/wp-content/uploads/2014/11/06162144983530.jpg"},

@@ -185,8 +185,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
     <Compile Include="Controllers\TodoItemController.cs" />
+    <Compile Include="DataObjects\Doctor.cs" />
     <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="Models\ifn661Context.cs" />
     <Compile Include="DataObjects\Patient.cs" />
