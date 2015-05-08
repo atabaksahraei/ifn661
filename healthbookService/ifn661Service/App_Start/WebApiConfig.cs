@@ -30,17 +30,6 @@ namespace ifn661Service
     {
         protected override void Seed(ifn661Context context)
         {
-            List<TodoItem> todoItems = new List<TodoItem>
-            {
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "First item", Complete = false },
-                new TodoItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Complete = false },
-            };
-
-            foreach (TodoItem todoItem in todoItems)
-            {
-                context.Set<TodoItem>().Add(todoItem);
-            }
-
             List<Doctor> docItems = new List<Doctor>
             {
                new Doctor(){Name="Dr. Bonny", Image="https://pbs.twimg.com/profile_images/3402491976/ebdcb1f3f9278fd540b2b6d2191e46b7_400x400.jpeg"}
@@ -56,13 +45,9 @@ namespace ifn661Service
                 new Patient() { Name = "Mark", Image = "http://www.fatosdesconhecidos.com.br/wp-content/uploads/2014/11/06162144983530.jpg"},
                 new Patient() { Name = "Billy", Image = "https://financialpostcom.files.wordpress.com/2012/12/1212gates.jpg"},
                 new Patient() { Name = "Joker", Image = "http://vignette2.wikia.nocookie.net/batman/images/4/49/MyCard_The_Joker.jpg"},
+                new Patient() { Name = "Joker 2", Image = "http://vignette2.wikia.nocookie.net/batman/images/4/49/MyCard_The_Joker.jpg"},
                 new Patient() { Name = "Sheldon", Image = "http://img1.wikia.nocookie.net/__cb20110725161640/bigbangtheory/de/images/5/52/Sheldons_Superblick.jpg"}
            };
-
-            foreach (TodoItem todoItem in todoItems)
-            {
-                context.Set<TodoItem>().Add(todoItem);
-            }
 
             foreach(Patient patient in patients)
             {
