@@ -37,6 +37,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Entity\Doctor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\Services\IiBeaconService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Entity\AppMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)iOSBeacon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xBeacon\Entity\ProximityType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xBeacon\Entity\xBeacon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xBeacon\Entity\BluetoothState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xBeacon\Interfaces\IxBeaconObserver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)xBeacon\Interfaces\IxBluetoothState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
@@ -47,6 +53,9 @@
     <Folder Include="$(MSBuildThisFileDirectory)Model\BL\" />
     <Folder Include="$(MSBuildThisFileDirectory)Model\BL\Entity\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModel\Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)xBeacon\" />
+    <Folder Include="$(MSBuildThisFileDirectory)xBeacon\Entity\" />
+    <Folder Include="$(MSBuildThisFileDirectory)xBeacon\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\PatientView.xaml">
