@@ -1,4 +1,4 @@
-﻿//#if __iOS__
+﻿#if __IOS__
 using System;
 using Xamarin.Forms;
 using CoreBluetooth;
@@ -91,4 +91,4 @@ namespace xBeacons
 	}
 }
 
-//#endif
+#endif

@@ -22,7 +22,11 @@ namespace healthbook
 		public PatientShareView ()
 		{
 			InitializeComponent ();
-			iOSBeacon beaconHelper = new iOSBeacon (this);
+
+			#if __IOS__
+			new iOSBeacon (this);
+			#endif
+
 			BindingContext = new PatientShareViewModel ();
 			ToolbarItems.Add(new ToolbarItem("refresh", null, async () =>
 				{
