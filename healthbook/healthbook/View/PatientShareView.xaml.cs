@@ -24,7 +24,8 @@ namespace healthbook
 			InitializeComponent ();
 
 			#if __IOS__
-			new iOSBeacon (this);
+			new iOSBeacon (this).AddBeaconMonitoring ("E2C56DB5-DFFB-48D2-B060-D0F5A71096E0", "TestRegion");
+			;
 			#endif
 
 			BindingContext = new PatientShareViewModel ();
