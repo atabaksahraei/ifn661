@@ -1,5 +1,4 @@
-﻿#if __IOS__
-using System;
+﻿using System;
 using Xamarin.Forms;
 using CoreBluetooth;
 using CoreLocation;
@@ -13,20 +12,40 @@ namespace xBeacons
 	class BTPeripheralDelegate : CBPeripheralManagerDelegate
 	{
 		IxBluetoothState observer;
-		public BTPeripheralDelegate(IxBluetoothState observer)
+
+		public BTPeripheralDelegate (IxBluetoothState observer)
 		{
 			this.observer = observer;
 		}
 
 		public override void StateUpdated (CBPeripheralManager peripheral)
 		{
-			if (peripheral.State == CBPeripheralManagerState.PoweredOn) {
-				Console.WriteLine ("powered on");
-				observer.BluetoothStateChanged (BluetoothState.On);
-			} else if (peripheral.State == CBPeripheralManagerState.PoweredOff) {
-				Console.WriteLine ("powered off");
-				observer.BluetoothStateChanged (BluetoothState.Off);
+			switch (peripheral.State) {
+			case CBPeripheralManagerState.PoweredOn:
+				observer.BluetoothStateChanged (BluetoothState.PoweredOn);
+				break;
+
+			case CBPeripheralManagerState.PoweredOff:
+				observer.BluetoothStateChanged (BluetoothState.PoweredOff);
+				break;
+
+			case CBPeripheralManagerState.Resetting:
+				observer.BluetoothStateChanged (BluetoothState.Resetting);
+				break;
+
+			case CBPeripheralManagerState.Unauthorized:
+				observer.BluetoothStateChanged (BluetoothState.Unauthorized);
+				break;
+
+			case CBPeripheralManagerState.Unknown:
+				observer.BluetoothStateChanged (BluetoothState.Unknown);
+				break;
+
+			case CBPeripheralManagerState.Unsupported:
+				observer.BluetoothStateChanged (BluetoothState.Unsupported);
+				break;
 			}
+
 		}
 	}
 
@@ -73,13 +92,12 @@ namespace xBeacons
 			locationMgr.RegionEntered += (object sender, CLRegionEventArgs e) => observer.RegionEntered (e.Region.Identifier);
 
 			locationMgr.DidRangeBeacons += (object sender, CLRegionBeaconsRangedEventArgs e) => {
-				List<xBeacon> tmpList = new List<xBeacon>();
-				foreach(CLBeacon clBeacon in e.Beacons)
-				{
-					tmpList.Add(xBeacon.FromCLBeacon(clBeacon));
+				List<xBeacon> tmpList = new List<xBeacon> ();
+				foreach (CLBeacon clBeacon in e.Beacons) {
+					tmpList.Add (xBeacon.FromCLBeacon (clBeacon));
 				}
-					beacons = tmpList;
-					observer.BeaconsFound(beacons);
+				beacons = tmpList;
+				observer.BeaconsFound (beacons);
 			};
 
 			//TODO: iterative
@@ -91,4 +109,3 @@ namespace xBeacons
 	}
 }
 
-#endif

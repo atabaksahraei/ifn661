@@ -4,8 +4,13 @@ namespace xBeacons
 {
 	public enum BluetoothState
 	{
-		On,
-		Off
+		PoweredOn,
+		PoweredOff,
+		Resetting,
+		Unauthorized,
+		Unsupported,
+		Unknown
 	}
+
 }
 
