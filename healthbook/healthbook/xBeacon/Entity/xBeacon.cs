@@ -24,22 +24,24 @@ namespace xBeacons
 			this.UUID = UUID;
 			this.Major = major;
 			this.Minor = minor;
+			this.Accuracy = accuracy;
 			this.Proximity = proximity;
+
 		}
 
 		public static xBeacon FromCLBeacon (CoreLocation.CLBeacon beacon)
 		{
 			ProximityType proximity = ProximityType.Unknow;
 			switch (beacon.Proximity) {
-			case CoreLocation.CLProximity.Immediate:
-				proximity = ProximityType.Immediate;
-				break;
-			case CoreLocation.CLProximity.Near:
-				proximity = ProximityType.Near;					
-				break;
-			case CoreLocation.CLProximity.Far:
-				proximity = ProximityType.Far;
-				break;
+				case CoreLocation.CLProximity.Immediate:
+					proximity = ProximityType.Immediate;
+					break;
+				case CoreLocation.CLProximity.Near:
+					proximity = ProximityType.Near;					
+					break;
+				case CoreLocation.CLProximity.Far:
+					proximity = ProximityType.Far;
+					break;
 			}
 			return new xBeacon (beacon.ProximityUuid.AsString (), beacon.Major.Int32Value, beacon.Minor.Int32Value, beacon.Accuracy, proximity);
 		}
