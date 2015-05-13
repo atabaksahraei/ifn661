@@ -9,7 +9,7 @@ namespace healthbook
 		public string Id { get; set; }
 		public string Name { get; set; }
 		public string Image { get; set; }
-		public string BeaconId { get; set; }
+		public int BeaconMinor { get; set; }
 
 
 		public Doctor ()

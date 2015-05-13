@@ -12,6 +12,8 @@ namespace ifn661Service.DataObjects
         public string Id { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
+        public int BeaconMinor { get; set; }
+
         public Doctor()
         {
             Id = Guid.NewGuid().ToString();
