@@ -7,7 +7,7 @@ using CoreBluetooth;
 
 namespace xBeacons
 {
-	public class iOSBeacon
+	public class iOSBeaconManager
 	{
 
 		IxBeaconObserver observer;
@@ -19,7 +19,7 @@ namespace xBeacons
 
 
 
-		public iOSBeacon (IxBeaconObserver observer)
+		public iOSBeaconManager (IxBeaconObserver observer)
 		{
 			peripheralDelegate = new iOSBluetoothManager (observer);
 			locationMgr = new CLLocationManager ();
@@ -52,6 +52,12 @@ namespace xBeacons
 
 			locationMgr.StartMonitoring (beaconRegion);
 			locationMgr.StartRangingBeacons (beaconRegion);
+
+		}
+
+		public void CreateVirtualBeacon(string UUID, int major, int minor, int power)
+		{
+			
 		}
 
 	}

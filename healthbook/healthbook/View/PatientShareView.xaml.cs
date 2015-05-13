@@ -21,12 +21,15 @@ namespace healthbook
 
 		public PatientShareView ()
 		{
-			InitializeComponent ();
 
 			#if __IOS__
-			new iOSBeacon (this).AddBeaconMonitoring ("E2C56DB5-DFFB-48D2-B060-D0F5A71096E0", "TestRegion");
-			;
+			iOSBeaconManager beaconManager = new iOSBeaconManager (this);
+			//beaconManager.AddBeaconMonitoring ("E2C56DB5-DFFB-48D2-B060-D0F5A71096E0", "TestRegion");
+			beaconManager.CreateVirtualBeacon("E2C56DB5-DFFB-48D2-B060-D0F5A71096E0", 0, 0, -59);
 			#endif
+
+			InitializeComponent ();
+
 
 			BindingContext = new PatientShareViewModel ();
 			ToolbarItems.Add(new ToolbarItem("refresh", null, async () =>
