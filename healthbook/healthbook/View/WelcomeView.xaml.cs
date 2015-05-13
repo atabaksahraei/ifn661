@@ -10,7 +10,12 @@ namespace healthbook
 {
 	public partial class WelcomeView : ContentPage
 	{
-		
+
+		#region const
+		public const string CONTEXT = "WelcomeView";
+		#endregion
+
+		#region var
 		public WelcomeViewModel Vm
 		{
 			get
@@ -18,6 +23,7 @@ namespace healthbook
 				return (WelcomeViewModel) BindingContext;
 			}
 		}
+		#endregion
 
 		public WelcomeView ()
 		{

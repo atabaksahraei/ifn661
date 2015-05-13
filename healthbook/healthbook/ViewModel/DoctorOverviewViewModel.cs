@@ -10,12 +10,19 @@ namespace healthbook.ViewModel
 
 	public class DoctorOverviewViewModel : ViewModelHealthBase
 	{
+
+		#region const
+		public const string CONTEXT = "DoctorOverviewViewModel";
+		#endregion
+
+		#region var
 		public List<Patient> Patients { get; private set; }
 
 		public DoctorOverviewViewModel ()
 		{
 			Patients = new List<Patient> ();
 		}
+		#endregion
 
 
 		public async void Delete(Patient p)

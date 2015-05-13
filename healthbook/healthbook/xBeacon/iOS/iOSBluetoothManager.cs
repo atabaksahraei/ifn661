@@ -1,6 +1,8 @@
 ﻿using System;
 using CoreBluetooth;
 using CoreFoundation;
+using CoreLocation;
+using Foundation;
 
 namespace xBeacons
 {
@@ -8,14 +10,36 @@ namespace xBeacons
 	{
 		IxBluetoothState observer;
 		CBPeripheralManager peripheralMgr;
+		CBPeripheralManagerState state ;
+
+		public void StartVitualBeacon(xBeaconRegion region, int power)
+		{
+
+			CLBeaconRegion clRegion = region.ToCLBeaconRegion ();
+
+			if (state == CBPeripheralManagerState.PoweredOn){
+				peripheralMgr.StartAdvertising (clRegion.GetPeripheralData (power));
+		} else {
+				peripheralMgr.StopAdvertising ();
+		}
+		}
+
+		public void StopVitualBeacon()
+		{
+				peripheralMgr.StopAdvertising ();
+		}
+
 		public iOSBluetoothManager (IxBluetoothState observer)
 		{
 			this.observer = observer;
 			peripheralMgr = new CBPeripheralManager (this, DispatchQueue.DefaultGlobalQueue);
+			state = CBPeripheralManagerState.Unknown;
 		}
 
 		public override void StateUpdated (CBPeripheralManager peripheral)
 		{
+			state = peripheral.State;
+
 			switch (peripheral.State) {
 			case CBPeripheralManagerState.PoweredOn:
 				observer.BluetoothStateChanged (BluetoothState.PoweredOn);

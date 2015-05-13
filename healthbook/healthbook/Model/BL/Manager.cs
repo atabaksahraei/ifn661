@@ -6,27 +6,25 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
+using System.Threading;
 
 namespace healthbook.Model.BL
 {
-	public interface IManager
-	{
-
-	}
-
 	public class Manager
 	{
 		#region constant
+		public const string BEACON_REGION_UUID = "8AA52754-E353-40F1-A4F4-5606E15101D1";
+		public const string BEACON_REGION_NAME = "healthbook";
+		public const int BEACON_MAJOR_DOCTOR = 1;
+		public const string CONTEXT = "Manager";
+		public const bool TRACE = true;
+		#endregion
 
-		public const string APP_CONTEXT = "Manager";
+		#region var
 		const string applicationURL = @"https://ifn661.azure-mobile.net/";
 		const string gatewayURL = @"https://ifn661.azure-mobile.net/";
 		const string applicationKey = @"wNGmbBuotheUnKbsLsXNpIfOrYIXyp87";
 		const string localDbPath = "localstore.db";
-
-		#endregion
-
-		#region var
 
 		private static Manager me = null;
 		private MobileServiceClient client;
@@ -113,7 +111,7 @@ namespace healthbook.Model.BL
 				await PatientTable.PullAsync ("allPatientItems", PatientTable.CreateQuery ()); // query ID is used for incremental sync
 				await DocTable.PullAsync ("allDoctorItems", DocTable.CreateQuery ()); // query ID is used for incremental sync
 			} catch (MobileServiceInvalidOperationException e) {
-				Console.Error.WriteLine (@"Sync Failed: {0}", e.Message);
+				TraceManager.Trace (CONTEXT, "SyncAsync# Faild: ", Thread.CurrentThread.ManagedThreadId, e.Message);
 			}
 		}
 
@@ -153,7 +151,7 @@ namespace healthbook.Model.BL
 					MeDoctor = DoctorItems.First<Doctor>();
 				}
 			} catch (MobileServiceInvalidOperationException e) {
-				Console.Error.WriteLine (@"ERROR {0}", e.Message);
+				TraceManager.Trace (CONTEXT, "RefreshDataAsync# Error: ", Thread.CurrentThread.ManagedThreadId, e.Message);
 			}
 		}
 
@@ -170,7 +168,7 @@ namespace healthbook.Model.BL
 				PatientItems.Add (patientItem); 
 
 			} catch (MobileServiceInvalidOperationException e) {
-				Console.Error.WriteLine (@"ERROR {0}", e.Message);
+				TraceManager.Trace (CONTEXT, "InsertPatientAsync# Error: ", Thread.CurrentThread.ManagedThreadId, e.Message);
 			}
 		}
 
@@ -182,7 +180,7 @@ namespace healthbook.Model.BL
 				PatientItems.RemoveAll ((x) => x.Id == patientItem.Id);
 
 			} catch (MobileServiceInvalidOperationException e) {
-				Console.Error.WriteLine (@"ERROR {0}", e.Message);
+				TraceManager.Trace (CONTEXT, "DeletePatientAsync# Error: ", Thread.CurrentThread.ManagedThreadId, e.Message);
 			}
 		}
 

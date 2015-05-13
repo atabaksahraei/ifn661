@@ -8,6 +8,12 @@ namespace healthbook
 {
 	public partial class PatientView : ContentPage
 	{
+
+		#region const
+		public const string CONTEXT = "PatientView";
+		#endregion
+
+		#region var
 		public PatientViewModel Vm
 		{
 			get
@@ -15,6 +21,8 @@ namespace healthbook
 				return (PatientViewModel) BindingContext;
 			}
 		}
+		#endregion
+
 		public PatientView (Patient patient)
 		{
 			InitializeComponent ();

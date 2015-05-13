@@ -4,26 +4,33 @@ using CoreLocation;
 using Foundation;
 using System.Collections.Generic;
 using CoreBluetooth;
+using System.Threading;
+using healthbook.Model.BL;
 
 namespace xBeacons
 {
 	public class iOSBeaconManager
 	{
+		#region const
+		public const string CONTEXT = "Manager";
+		#endregion
 
+		#region var
 		IxBeaconObserver observer;
-		iOSBluetoothManager peripheralDelegate;
+		iOSBluetoothManager iosBluetoothManager;
 		CLLocationManager locationMgr;
 		CLProximity previousProximity;
 		List<CLBeaconRegion> beaconRegions;
 		List<xBeacon> beacons;
-
+		#endregion
 
 
 		public iOSBeaconManager (IxBeaconObserver observer)
 		{
-			peripheralDelegate = new iOSBluetoothManager (observer);
+			iosBluetoothManager = new iOSBluetoothManager (observer);
 			locationMgr = new CLLocationManager ();
 			locationMgr.RequestWhenInUseAuthorization ();
+
 			#region locationManagerEvent
 			locationMgr.RegionEntered += (object sender, CLRegionEventArgs e) => observer.RegionEntered (e.Region.Identifier);
 
@@ -34,6 +41,10 @@ namespace xBeacons
 				}
 				beacons = tmpList;
 				observer.BeaconsFound (beacons);
+			};
+
+			locationMgr.RangingBeaconsDidFailForRegion += (object sender, CLRegionBeaconsFailedEventArgs e) => {
+				TraceManager.Trace (CONTEXT, "DeletePatientAsync# Error: ", Thread.CurrentThread.ManagedThreadId, e.Error.ToString());
 			};
 			#endregion
 
@@ -55,10 +66,27 @@ namespace xBeacons
 
 		}
 
-		public void CreateVirtualBeacon(string UUID, int major, int minor, int power)
+		public void StartVitualBeacon(string uuid, int major, int minor, string regionName, int power)
 		{
-			
+			xBeaconRegion region = new xBeaconRegion () {
+				UUID = uuid,
+				Major = major,
+				Minor = minor,
+				RegionName = regionName
+			};
+			StartVitualBeacon (region, power);
 		}
+
+		public void StartVitualBeacon(xBeaconRegion region, int power)
+		{
+			iosBluetoothManager.StartVitualBeacon (region, power);
+		}
+
+		public void StopVitualBeacon()
+		{
+			iosBluetoothManager.StopVitualBeacon ();
+		}
+
 
 	}
 }

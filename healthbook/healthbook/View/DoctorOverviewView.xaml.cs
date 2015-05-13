@@ -9,7 +9,12 @@ namespace healthbook
 {
 	public partial class DoctorOverviewView : ContentPage
 	{
-		#region viewModel
+
+		#region const
+		public const string CONTEXT = "DoctorOverView";
+		#endregion
+
+		#region var
 		public DoctorOverviewViewModel Vm { 
 			get { 
 				return (DoctorOverviewViewModel) BindingContext;
