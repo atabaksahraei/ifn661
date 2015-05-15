@@ -16,6 +16,21 @@ namespace healthbook
 		{
 			Id = Guid.NewGuid ().ToString ();
 		}
+
+		public override bool Equals (Object obj)
+		{
+			if (obj != null) {
+				bool parentIsEquals = base.Equals (obj);
+				if (Id == ((Doctor)obj).Id
+				   && Name == ((Doctor)obj).Name
+				   && Image == ((Doctor)obj).Image
+				   && BeaconMinor == ((Doctor)obj).BeaconMinor) {
+					return true && parentIsEquals;
+				}
+			}
+
+			return false;
+		}
 	}
 }
 

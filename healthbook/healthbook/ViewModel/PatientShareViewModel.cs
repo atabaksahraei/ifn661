@@ -10,13 +10,19 @@ namespace healthbook.ViewModel
 	public class PatientShareViewModel : ViewModelHealthBase, IxBeaconObserver
 	{
 		#region const
+
 		public const string CONTEXT = "PatientShareViewModel";
+
 		#endregion
 
 		#region var
+
 		public Patient Me { get; set; }
+
 		public int DocOpc { get; set; }
+
 		public Doctor Doc { get; set; }
+
 		#endregion
 
 
@@ -24,20 +30,22 @@ namespace healthbook.ViewModel
 		{
 			refresh ();
 		}
-		public async void refresh()
+
+		public async void refresh ()
 		{
-			await Manager.Instance.RefreshDataAsync();
+			await Manager.Instance.RefreshDataAsync ();
 			Me = Manager.Instance.MePatient;
-			Doc = new Doctor();
+			Doc = new Doctor ();
 			RaisePropertyChanged ("Me");
 			RaisePropertyChanged ("Doc");
 		}
 
 		#region IxBeaconObserver implementation
+
 		public void BeaconsFound (System.Collections.Generic.IEnumerable<xBeacon> beacons)
 		{
-			foreach(xBeacon beacon in beacons)
-			{
+			Doctor tmpDoc = null;
+			foreach (xBeacon beacon in beacons) {
 				TraceManager.Trace (CONTEXT, "BeaconsFound", Thread.CurrentThread.ManagedThreadId, beacon.ToString ());
 			}
 			
@@ -60,7 +68,10 @@ namespace healthbook.ViewModel
 			} else {
 				Doc = new Doctor ();
 			}
-			RaisePropertyChanged ("Doc");
+		
+			//if (!Doc.Equals (tmpDoc)) {
+				RaisePropertyChanged ("Doc");
+			//}
 		}
 
 		public void RegionEntered (string regionName)
@@ -72,12 +83,16 @@ namespace healthbook.ViewModel
 		{
 			TraceManager.Trace (CONTEXT, "RegionExit", Thread.CurrentThread.ManagedThreadId, regionName);
 		}
+
 		#endregion
+
 		#region IxBluetoothState implementation
+
 		public void BluetoothStateChanged (BluetoothState state)
 		{
-			TraceManager.Trace (CONTEXT, "BluetoothStateChanged", Thread.CurrentThread.ManagedThreadId, state.ToString());
+			TraceManager.Trace (CONTEXT, "BluetoothStateChanged", Thread.CurrentThread.ManagedThreadId, state.ToString ());
 		}
+
 		#endregion
 	}
 }

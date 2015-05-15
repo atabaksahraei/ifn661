@@ -22,6 +22,7 @@ namespace healthbook
 				return (PatientShareViewModel) BindingContext;
 			}
 		}
+		iOSBeaconManager beaconManager;
 		#endregion
 
 		public PatientShareView ()
@@ -29,7 +30,7 @@ namespace healthbook
 			BindingContext = new PatientShareViewModel ();
 
 			#if __IOS__
-			iOSBeaconManager beaconManager = new iOSBeaconManager (Vm);
+			beaconManager = new iOSBeaconManager (Vm);
 			beaconManager.AddBeaconMonitoring (Manager.BEACON_REGION_UUID, Manager.BEACON_REGION_NAME);
 			//beaconManager.StartVitualBeacon("E2C56DB5-DFFB-48D2-B060-D0F5A71096E0", 0, 0, "healthbook", -59);
 			#endif

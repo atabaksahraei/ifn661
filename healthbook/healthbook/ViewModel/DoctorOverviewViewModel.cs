@@ -4,11 +4,12 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using Microsoft.WindowsAzure.MobileServices;
 using healthbook.Model.BL;
+using xBeacons;
 
 namespace healthbook.ViewModel
 {
 
-	public class DoctorOverviewViewModel : ViewModelHealthBase
+	public class DoctorOverviewViewModel : ViewModelHealthBase, IxBeaconObserver
 	{
 
 		#region const
@@ -39,6 +40,34 @@ namespace healthbook.ViewModel
 			Patients = Manager.Instance.PatientItems;
 			RaisePropertyChanged ("Patients");
 		}
+
+		#region IxBeaconObserver implementation
+
+		public void BeaconsFound (IEnumerable<xBeacon> beacons)
+		{
+			//throw new NotImplementedException ();
+		}
+
+		public void RegionEntered (string regionName)
+		{
+			//throw new NotImplementedException ();
+		}
+
+		public void RegionExit (string regionName)
+		{
+			//throw new NotImplementedException ();
+		}
+
+		#endregion
+
+		#region IxBluetoothState implementation
+
+		public void BluetoothStateChanged (BluetoothState state)
+		{
+			//throw new NotImplementedException ();
+		}
+
+		#endregion
 	}
 }
 
