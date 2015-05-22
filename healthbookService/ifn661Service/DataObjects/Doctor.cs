@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ifn661Service.DataObjects
+namespace Healthbook.DataObjects
 {
 
     public class Doctor : EntityData
@@ -13,6 +13,8 @@ namespace ifn661Service.DataObjects
         public string Name { get; set; }
         public string Image { get; set; }
         public int BeaconMinor { get; set; }
+
+        public List<Patient> MyPatients { get; set; }
 
         public Doctor()
         {

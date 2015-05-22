@@ -9,8 +9,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ifn661Service</RootNamespace>
-    <AssemblyName>ifn661Service</AssemblyName>
+    <RootNamespace>Healthbook</RootNamespace>
+    <AssemblyName>Healthbook</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -188,8 +188,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\PatientController.cs" />
+    <Compile Include="Controllers\PatientDataController.cs" />
+    <Compile Include="Controllers\SharingController.cs" />
+    <Compile Include="DataObjects\Data.cs" />
     <Compile Include="DataObjects\Doctor.cs" />
-    <Compile Include="Models\ifn661Context.cs" />
+    <Compile Include="Models\HealthbookContext.cs" />
     <Compile Include="DataObjects\Patient.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
     <Compile Include="Global.asax.cs">

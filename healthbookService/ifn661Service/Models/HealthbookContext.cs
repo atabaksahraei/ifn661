@@ -3,11 +3,11 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using Microsoft.WindowsAzure.Mobile.Service;
 using Microsoft.WindowsAzure.Mobile.Service.Tables;
-using ifn661Service.DataObjects;
+using Healthbook.DataObjects;
 
-namespace ifn661Service.Models
+namespace Healthbook.Models
 {
-    public class ifn661Context : DbContext
+    public class HealthbookContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -20,9 +20,9 @@ namespace ifn661Service.Models
         // service name, set by the 'MS_MobileServiceName' AppSettings in the local 
         // Web.config, is the same as the service name when hosted in Azure.
         private const string connectionStringName = "Name=MS_TableConnectionString";
-        public System.Data.Entity.DbSet<ifn661Service.DataObjects.Patient> Patients { get; set; }
-        public System.Data.Entity.DbSet<ifn661Service.DataObjects.Doctor> Doctors { get; set; }
-        public ifn661Context() : base(connectionStringName)
+        public System.Data.Entity.DbSet<Healthbook.DataObjects.Patient> Patients { get; set; }
+        public System.Data.Entity.DbSet<Healthbook.DataObjects.Doctor> Doctors { get; set; }
+        public HealthbookContext() : base(connectionStringName)
         {
         } 
         
@@ -40,7 +40,7 @@ namespace ifn661Service.Models
                     "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
         }
 
-     
+        public System.Data.Entity.DbSet<Healthbook.DataObjects.PatientData> PatientDatas { get; set; }
     }
 
 }

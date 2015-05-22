@@ -4,17 +4,17 @@ using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.OData;
 using Microsoft.WindowsAzure.Mobile.Service;
-using ifn661Service.DataObjects;
-using ifn661Service.Models;
+using Healthbook.DataObjects;
+using Healthbook.Models;
 
-namespace ifn661Service.Controllers
+namespace Healthbook.Controllers
 {
     public class DoctorController : TableController<Doctor>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
         {
             base.Initialize(controllerContext);
-            ifn661Context context = new ifn661Context();
+            HealthbookContext context = new HealthbookContext();
             DomainManager = new EntityDomainManager<Doctor>(context, Request, Services);
         }
 

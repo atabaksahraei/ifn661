@@ -21,9 +21,9 @@ namespace healthbook.Model.BL
 		#endregion
 
 		#region var
-		const string applicationURL = @"https://ifn661.azure-mobile.net/";
-		const string gatewayURL = @"https://ifn661.azure-mobile.net/";
-		const string applicationKey = @"wNGmbBuotheUnKbsLsXNpIfOrYIXyp87";
+		const string applicationURL = @"https://healthbook.azure-mobile.net/";
+		const string gatewayURL = @"https://healthbook.azure-mobile.net/";
+		const string applicationKey = @"ALAIhtCvPwxlpXOSYsgyllwGIubTPh90";
 		const string localDbPath = "localstore.db";
 
 		private static Manager me = null;

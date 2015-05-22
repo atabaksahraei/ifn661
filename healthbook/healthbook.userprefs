@@ -1,15 +1,21 @@
 ﻿<Properties StartupItem="iOS/healthbook.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.3" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="healthbook/Model/BL/Manager.cs">
     <Files>
-      <File FileName="iOS/Main.cs" Line="1" Column="1" />
-      <File FileName="healthbook/healthbook.cs" Line="1" Column="1" />
-      <File FileName="healthbook/View/Welcome.xaml.cs" Line="1" Column="1" />
-      <File FileName="../../../Downloads/XamariniOS/TryMobileApp/QSTodoService.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="healthbook/View/DoctorOverviewView.xaml.cs" Line="39" Column="1" />
+      <File FileName="healthbook/Model/BL/Manager.cs" Line="123" Column="1" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/atabaksahraei/Repos/ifn661/healthbook/healthbook/xBeacon/Entity/xBeacon.cs" line="54" column="1" />
+      <Breakpoint file="/Users/atabaksahraei/Repos/ifn661/healthbook/healthbook/iOSBeacon.cs" line="67" column="1" />
+      <Breakpoint file="/Users/atabaksahraei/Repos/ifn661/healthbook/healthbook/iOSBeacon.cs" line="70" column="45" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>Droid/healthbook.Droid.csproj</String>
+  </DisabledProjects>
 </Properties>

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Web.Http;
 using Microsoft.WindowsAzure.Mobile.Service;
-using ifn661Service.DataObjects;
-using ifn661Service.Models;
+using Healthbook.DataObjects;
+using Healthbook.Models;
 
-namespace ifn661Service
+namespace Healthbook
 {
     public static class WebApiConfig
     {
@@ -26,9 +26,9 @@ namespace ifn661Service
         }
     }
 
-    public class ifn661Initializer : ClearDatabaseSchemaIfModelChanges<ifn661Context>
+    public class ifn661Initializer : ClearDatabaseSchemaIfModelChanges<HealthbookContext>
     {
-        protected override void Seed(ifn661Context context)
+        protected override void Seed(HealthbookContext context)
         {
             List<Doctor> docItems = new List<Doctor>
             {

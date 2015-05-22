@@ -1,7 +1,7 @@
 ﻿using System.Web.Http;
 using System.Web.Routing;
 
-namespace ifn661Service
+namespace Healthbook
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

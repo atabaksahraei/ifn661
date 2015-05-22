@@ -16,6 +16,7 @@ namespace xBeacons
 		{
 		}
 
+		#region DTO
 		public CoreLocation.CLBeaconRegion ToCLBeaconRegion ()
 		{
 			Foundation.NSUuid uuid = new Foundation.NSUuid (UUID);
@@ -34,6 +35,7 @@ namespace xBeacons
 			}
 			return null;
 		}
+		#endregion
 
 		public override string ToString ()
 		{
