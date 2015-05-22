@@ -12,17 +12,19 @@ namespace healthbook
 	{
 
 		#region const
+
 		public const string CONTEXT = "PatientShareView";
+
 		#endregion
 
 		#region var
-		public PatientShareViewModel Vm
-		{
-			get
-			{
-				return (PatientShareViewModel) BindingContext;
+
+		public PatientShareViewModel Vm {
+			get {
+				return (PatientShareViewModel)BindingContext;
 			}
 		}
+
 		#endregion
 
 		public PatientShareView ()
@@ -31,13 +33,18 @@ namespace healthbook
 
 
 			InitializeComponent ();
-			ImageCircleRenderer.Init();
+			ImageCircleRenderer.Init ();
 
-			ToolbarItems.Add(new ToolbarItem("refresh", null, async () =>
-				{
-					Vm.refresh();	
-				}));
+			ToolbarItems.Add (new ToolbarItem ("refresh", null, async () => {
+				Vm.refresh ();	
+			}));
 			
+		}
+
+		void OnTapGestureRecognizerTappedDoc (object sender, EventArgs args)
+		{
+			DisplayAlert("Doc Tap", "Doc Tapped", "OK");
+
 		}
 
 
