@@ -6,12 +6,20 @@
 
 		<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="50">
 			<StackLayout Orientation="Vertical" VerticalOptions="Center">
-				<Image Source="ic_patient.png" WidthRequest="50"/>
+				<Image Source="ic_patient.png" WidthRequest="50">
+				<Image.GestureRecognizers>
+						<TapGestureRecognizer Tapped="btnPatientClicked" NumberOfTapsRequired="1" />
+					</Image.GestureRecognizers>
+				</Image>
 				<Button Text="Patient" TextColor="White" BackgroundColor="#84B001" Clicked="btnPatientClicked"/>
 			</StackLayout>
 
 			<StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="25">
-				<Image Source="ic_doc.png" WidthRequest="50"/>
+				<Image Source="ic_doc.png" WidthRequest="50">
+				<Image.GestureRecognizers>
+						<TapGestureRecognizer Tapped="btnDocClicked" NumberOfTapsRequired="1" />
+					</Image.GestureRecognizers>
+				</Image>
 				<Button Text="Doctor" TextColor="White" BackgroundColor="#84B001" Clicked="btnDocClicked"/>
 			</StackLayout>
 
