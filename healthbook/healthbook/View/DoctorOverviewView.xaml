@@ -18,7 +18,7 @@ Title="Healthbook">
 						<ViewCell>
 							<ViewCell.ContextActions>
 								<MenuItem Clicked="OnMore" CommandParameter="{Binding .}" Text="More" />
-								<MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+								<MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Remove" IsDestructive="True" />
 							</ViewCell.ContextActions>
 							<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
 								<StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Horizontal">
