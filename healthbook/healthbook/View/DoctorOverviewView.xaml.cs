@@ -6,6 +6,7 @@ using System.Diagnostics;
 using healthbook.ViewModel;
 using xBeacons;
 using healthbook.Model.BL;
+using ImageCircle.Forms.Plugin.iOS;
 
 namespace healthbook
 {
@@ -22,8 +23,6 @@ namespace healthbook
 				return (DoctorOverviewViewModel) BindingContext;
 			}
 		}
-		iOSBeaconManager beaconManager;
-
 		#endregion
 	
 		#region constructor
@@ -33,23 +32,20 @@ namespace healthbook
 
 			BindingContext = new DoctorOverviewViewModel ();
 
-			#if __IOS__
-			beaconManager = new iOSBeaconManager (Vm);
-			//beaconManager.AddBeaconMonitoring (Manager.BEACON_REGION_UUID, Manager.BEACON_REGION_NAME);
-			beaconManager.StartVitualBeacon(Manager.BEACON_REGION_UUID, Manager.BEACON_MAJOR_DOCTOR, 1, Manager.BEACON_REGION_NAME, -59);
-			#endif
-
+			ImageCircleRenderer.Init();
 			InitializeComponent ();
 			//Toolbar
 			ToolbarItems.Add(new ToolbarItem("refresh", null, async () =>
 				{
 					 Vm.refreshData();
 				}));
+			Vm.refreshData ();
 		}
 		#endregion
 
 		#region listEvents
 		public void OnRefresh(object sender, EventArgs e) {
+
 			listOfPatients.IsRefreshing = true;
 			Vm.refreshData();
 			listOfPatients.IsRefreshing = false;

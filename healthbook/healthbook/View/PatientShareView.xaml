@@ -28,8 +28,10 @@ Title="Share your data">
                  "{ConstraintExpression Type=RelativeToParent,
                                         Property=Height,
                                         Factor=0.3}" >
-		<Image Source="{Binding Doc.Image, Mode=TwoWay}" WidthRequest="50"/>
-		<Label Text="{Binding Doc.Name, Mode=TwoWay}" FontSize="Small" TextColor="#84B001" VerticalOptions="Center"/>
+<controls:CircleImage Source="{Binding Doc.Image, Mode=TwoWay}" Aspect = "AspectFill" BorderColor = "#84B001"
+  BorderThickness = "1"  HeightRequest = "60" WidthRequest="60"/>
+
+				<Label Text="{Binding Doc.Name, Mode=TwoWay}" FontSize="Small" TextColor="#84B001" VerticalOptions="Center"/>
     </StackLayout>
 	<StackLayout
 	Orientation="Vertical"
@@ -43,7 +45,7 @@ Title="Share your data">
              RelativeLayout.YConstraint=
                  "{ConstraintExpression Type=RelativeToParent,
                                         Property=Height,
-                                        Factor=0.7}" 
+                                        Factor=0.6}" 
              RelativeLayout.WidthConstraint=
                  "{ConstraintExpression Type=RelativeToParent,
                                         Property=Width,
@@ -53,8 +55,10 @@ Title="Share your data">
                                         Property=Height,
                                         Factor=0.3}" >
 		<Image Source="ic_signal.png" WidthRequest="50"/>
-		<Image Source="{Binding Me.Image, Mode=TwoWay}" WidthRequest="50"/>
-		<Label Text="{Binding Me.Name, Mode=TwoWay}" FontSize="Small" TextColor="#84B001" VerticalOptions="Center"/>
+<controls:CircleImage Source="{Binding Me.Image, Mode=TwoWay}" Aspect = "AspectFill" BorderColor = "#84B001"
+  BorderThickness = "1"  HeightRequest = "60" WidthRequest="60"/>
+ 
+<Label Text="{Binding Me.Name, Mode=TwoWay}" FontSize="Small" TextColor="#84B001" VerticalOptions="Center"/>
     </StackLayout>
 	</RelativeLayout>
 	</ContentPage.Content>

@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="healthbook.DoctorOverviewView" Title="Healthbook">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="healthbook.DoctorOverviewView"
+xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+Title="Healthbook">
 	<ContentPage.Content>
 		<StackLayout>
 			<Label Text="Doctor Overview" TextColor="#84B001" />
@@ -19,7 +22,8 @@
 							</ViewCell.ContextActions>
 							<StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
 								<StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Horizontal">
-									<Image Source="{Binding Image, Mode=TwoWay}" />
+								<controls:CircleImage Source="{Binding Image, Mode=TwoWay}" Aspect = "AspectFill" BorderColor = "#84B001"
+  BorderThickness = "1"  HeightRequest = "40" WidthRequest="40"/>
 									<StackLayout Orientation="Vertical" VerticalOptions="Start">
 										<StackLayout Orientation="Horizontal">
 											<Label Text="{Binding Name, Mode=TwoWay}" YAlign="Center" FontSize="Medium" />
