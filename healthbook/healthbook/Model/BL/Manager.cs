@@ -18,6 +18,8 @@ namespace healthbook.Model.BL
 		public const int BEACON_MAJOR_DOCTOR = 1;
 		public const string CONTEXT = "Manager";
 		public const bool TRACE = true;
+		public const string TMP_PATIENT_NAME = "Billy";
+		public const string TMP_DOCTOR_NAME = "Dr. Bonny";
 		#endregion
 
 		#region var
@@ -35,13 +37,22 @@ namespace healthbook.Model.BL
 
 		public List<Patient> PatientItems { get; private set; }
 
-		public Patient MePatient { get; private set; }
+		public Patient MePatient {
+			get{
+				return PatientItems.FirstOrDefault<Patient> (d => d.Name == meName);
+			} 
+		}
+			
 
-		private string meName = "Mark";
+		private string meName = TMP_PATIENT_NAME;
 
 		public List<Doctor> DoctorItems { get; private set; }
 
-		public Doctor MeDoctor { get; private set; }
+		public Doctor MeDoctor { 
+			get{ 
+				return DoctorItems.FirstOrDefault<Doctor> (d => d.Name == meName);
+			} 
+		}
 
 		#endregion
 
@@ -127,30 +138,8 @@ namespace healthbook.Model.BL
 				PatientItems = await PatientTable.ToListAsync ();
 				DoctorItems = await DocTable.ToListAsync ();
 
-				//looking for Patient
-				switch (AppMode) {
-				case AppMode.Patient: 
-					
-					Patient tmpMePat = null;
-					tmpMePat = PatientItems.First<Patient> (d => d.Name == meName);
-					if (tmpMePat != null) {
-						MePatient = tmpMePat;
-					} 
-					break;
 
-				case AppMode.Doctor:
-					Doctor tmpMeDoc = null;
-					tmpMeDoc = DoctorItems.First<Doctor> (d => d.Name == meName);
-					if (tmpMeDoc != null) {
-						MeDoctor = tmpMeDoc;
-					}
-					break;
-				}
-				if(MeDoctor == null)
-				{
-					MeDoctor = DoctorItems.First<Doctor>();
-				}
-			} catch (MobileServiceInvalidOperationException e) {
+			} catch (Exception e) {
 				TraceManager.Trace (CONTEXT, "RefreshDataAsync# Error: ", Thread.CurrentThread.ManagedThreadId, e.Message);
 			}
 		}
