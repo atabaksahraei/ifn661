@@ -10,23 +10,23 @@ namespace xBeacons
 	{
 		IxBluetoothState observer;
 		CBPeripheralManager peripheralMgr;
-		CBPeripheralManagerState state ;
+		CBPeripheralManagerState state;
 
-		public void StartVitualBeacon(xBeaconRegion region, int power)
+		public void StartVitualBeacon (xBeaconRegion region, int power)
 		{
 
 			CLBeaconRegion clRegion = region.ToCLBeaconRegion ();
 
-			if (state == CBPeripheralManagerState.PoweredOn){
+			if (state == CBPeripheralManagerState.PoweredOn) {
 				peripheralMgr.StartAdvertising (clRegion.GetPeripheralData (power));
-		} else {
+			} else {
 				peripheralMgr.StopAdvertising ();
-		}
+			}
 		}
 
-		public void StopVitualBeacon()
+		public void StopVitualBeacon ()
 		{
-				peripheralMgr.StopAdvertising ();
+			peripheralMgr.StopAdvertising ();
 		}
 
 		public iOSBluetoothManager (IxBluetoothState observer)

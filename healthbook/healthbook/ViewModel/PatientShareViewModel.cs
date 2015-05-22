@@ -23,22 +23,30 @@ namespace healthbook.ViewModel
 
 		public Doctor Doc { get; set; }
 
+		iOSBeaconManager beaconManager;
+
 		#endregion
 
 
 		public PatientShareViewModel ()
 		{
+			beaconManager = new iOSBeaconManager (this);
 			refresh ();
 		}
 
 		public async void refresh ()
 		{
+			#if __IOS__
+			beaconManager.StopVitualBeacon();
+			beaconManager.AddBeaconMonitoring (Manager.BEACON_REGION_UUID, Manager.BEACON_REGION_NAME);
+			#endif
+
 			await Manager.Instance.RefreshDataAsync ();
 			Me = Manager.Instance.MePatient;
-			Doc = new Doctor ();
 			RaisePropertyChanged ("Me");
 			RaisePropertyChanged ("Doc");
 		}
+
 
 		#region IxBeaconObserver implementation
 

@@ -5,6 +5,7 @@ using healthbook.ViewModel;
 using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.Sync;
 using System.Threading.Tasks;
+using healthbook.Model.BL;
 
 namespace healthbook
 {
@@ -37,7 +38,7 @@ namespace healthbook
 			nv.BarBackgroundColor = Color.FromHex("84B001");
 			nv.BarTextColor = Color.White;
 			App.Instance.MainPage = nv;
-			Vm.SetAppData ("Mark", AppMode.Patient);
+			Vm.SetAppData (Manager.TMP_PATIENT_NAME, AppMode.Patient);
 		}
 
 		async void btnDocClicked(object sender, EventArgs args) {
@@ -45,7 +46,7 @@ namespace healthbook
 			nv.BarBackgroundColor = Color.FromHex("84B001");
 			nv.BarTextColor = Color.White;
 			App.Instance.MainPage = nv;
-			Vm.SetAppData ("Dr. Bonny", AppMode.Doctor);
+			Vm.SetAppData (Manager.TMP_DOCTOR_NAME, AppMode.Doctor);
 		}
 
 	}
