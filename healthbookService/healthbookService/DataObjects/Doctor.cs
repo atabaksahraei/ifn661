@@ -9,9 +9,12 @@ namespace healthbookService.DataObjects
     public class Doctor : EntityData
     {
         public string Name { get; set; }
+        public string Degree { get; set; }
         public string Image { get; set; }
         public int BeaconMinor { get; set; }
-        public string PatientIds { get; set; }
+        public string PidL { get; set; }
+        public string Test { get; set; }
+
 
         public Doctor()
         {

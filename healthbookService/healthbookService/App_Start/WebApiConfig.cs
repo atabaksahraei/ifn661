@@ -58,13 +58,13 @@ namespace healthbookService
 
             List<Doctor> docItems = new List<Doctor>
             {
-               new Doctor(){Name="Dr. Bonny", BeaconMinor = 0, Image="https://pbs.twimg.com/profile_images/3402491976/ebdcb1f3f9278fd540b2b6d2191e46b7_400x400.jpeg"},
-               new Doctor(){Name="Dr. Dian", BeaconMinor = 1, Image="http://staff.qut.edu.au/files/avatars/398/48e931abc48c13958674c274ea285377-bpfull.jpg"}
+               new Doctor(){Name="Dr. Bonny", Degree= "B. Sc.", BeaconMinor = 0, Image="https://pbs.twimg.com/profile_images/3402491976/ebdcb1f3f9278fd540b2b6d2191e46b7_400x400.jpeg"},
+               new Doctor(){Name="Dr. Dian", Degree= "M. Sc.", BeaconMinor = 1, Image="http://staff.qut.edu.au/files/avatars/398/48e931abc48c13958674c274ea285377-bpfull.jpg"}
             };
 
             foreach (Doctor docItem in docItems)
             {
-                docItem.PatientIds = String.Format("[{0}]", patients.FirstOrDefault<Patient>().Id);
+                docItem.PidL = String.Format("[\"{0}\"]", patients.FirstOrDefault<Patient>().Id);
                 context.Set<Doctor>().Add(docItem);
             }
 
