@@ -189,6 +189,12 @@
     <BundleResource Include="Resources\ic_logo.png" />
     <BundleResource Include="Resources\ic_signal.png" />
     <BundleResource Include="Resources\portrait.jpg" />
+    <BundleResource Include="Resources\stethescope%403x.png" />
+    <BundleResource Include="Resources\stethescope%402x.png" />
+    <BundleResource Include="Resources\stethescope.png" />
+    <BundleResource Include="Resources\back%403x.png" />
+    <BundleResource Include="Resources\back%402x.png" />
+    <BundleResource Include="Resources\back.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

@@ -28,7 +28,6 @@ namespace healthbook
 
 		public WelcomeView ()
 		{
-
 			BindingContext = new WelcomeViewModel();
 			InitializeComponent ();
 		}
