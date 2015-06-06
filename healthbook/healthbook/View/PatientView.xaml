@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="healthbook.PatientView"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions" x:Class="healthbook.PatientView"
 Title="{Binding Patient.Name, Mode=TwoWay}">
 	<ContentPage.Content>
 	<StackLayout Orientation="Horizontal">
-		<Image Source="{Binding Patient.Image, Mode=TwoWay}"/>
-		<Label Text="{Binding Patient.Name, Mode=TwoWay}" FontSize="Small" TextColor="#84B001" VerticalOptions="Center"/>
+		<StackLayout Orientation="Vertical" HeightRequest="60"  BackgroundColor="#84B001">
+		<controls:CircleImage Source="{Binding Patient.Image, Mode=TwoWay}" Aspect="AspectFill" BorderColor="#FFFFFF" BorderThickness="1" HeightRequest="60" WidthRequest="60">
+		</controls:CircleImage>
+			<Label Text="{Binding Patient.Name, Mode=TwoWay}" FontSize="Small" TextColor="#84B001" VerticalOptions="Center"/>
+		</StackLayout>
 	</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
