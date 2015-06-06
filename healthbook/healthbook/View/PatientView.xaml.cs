@@ -29,20 +29,22 @@ namespace healthbook
 
 			InitializeComponent ();
 			BindingContext = new PatientViewModel (Manager.Instance.MePatient);
-			ToolbarItems.Add(new ToolbarItem("share", null, async () =>
-				{
-
+			if (Manager.Instance.AppMode == AppMode.Patient) {
+				ToolbarItems.Add (new ToolbarItem ("share", null, async () => {
+					Navigation.PushAsync (new PatientShareView ());
 				}));
+			}
 		}
 
 		public PatientView (Patient patient)
 		{
 			InitializeComponent ();
 			BindingContext = new PatientViewModel (patient);
-			ToolbarItems.Add(new ToolbarItem("share", null, async () =>
-				{
-
+			if (Manager.Instance.AppMode == AppMode.Patient) {
+				ToolbarItems.Add (new ToolbarItem ("share", null, async () => {
+					Navigation.PushAsync (new PatientShareView ());
 				}));
+			}
 		}
 	}
 }
