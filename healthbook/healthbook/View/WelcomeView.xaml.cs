@@ -33,15 +33,16 @@ namespace healthbook
 			InitializeComponent ();
 		}
 
-		async void btnPatientClicked(object sender, EventArgs args) {
-			var nv = new NavigationPage (new PatientShareView()) {Title="Healthbook"};
+
+		 void btnPatientClicked(object sender, EventArgs args) {
+			var nv = new NavigationPage (new PatientView()) {Title="Healthbook"};
 			nv.BarBackgroundColor = Color.FromHex("84B001");
 			nv.BarTextColor = Color.White;
 			App.Instance.MainPage = nv;
 			Vm.SetAppData (Manager.TMP_PATIENT_NAME, AppMode.Patient);
 		}
 
-		async void btnDocClicked(object sender, EventArgs args) {
+		 void btnDocClicked(object sender, EventArgs args) {
 			var nv = new NavigationPage (new DoctorOverviewView()) {Title="Healthbook"};
 			nv.BarBackgroundColor = Color.FromHex("84B001");
 			nv.BarTextColor = Color.White;

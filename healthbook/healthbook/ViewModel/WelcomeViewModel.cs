@@ -10,7 +10,8 @@ namespace healthbook.ViewModel
 		#endregion
 
 		#region var
-
+		public bool DataLoaded { get; set; }
+		public bool Loading { get; set; }
 		#endregion
 
 		public WelcomeViewModel () : base()
@@ -20,8 +21,16 @@ namespace healthbook.ViewModel
 
 		async void initial()
 		{
+			DataLoaded = false;
+			Loading = true;
+			RaisePropertyChanged ("Loading");
+			RaisePropertyChanged ("DataLoaded");
 			await Manager.Instance.InitializeStoreAsync();
 			await Manager.Instance.RefreshDataAsync ();
+			DataLoaded = true;
+			Loading = false;
+			RaisePropertyChanged ("Loading");
+			RaisePropertyChanged ("DataLoaded");
 
 		}
 
