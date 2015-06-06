@@ -151,6 +151,19 @@ namespace healthbook.Model.BL
 
 		#region datamanipulation
 
+		public async Task UpdateAsync (Doctor doctorItem)
+		{
+			try {                
+				await DocTable.UpdateAsync (doctorItem); // Insert a new TodoItem into the local database. 
+				await SyncAsync (); // send changes to the mobile service
+				DoctorItems = await DocTable.ToListAsync ();
+
+
+			} catch (MobileServiceInvalidOperationException e) {
+				TraceManager.Trace (CONTEXT, "InsertPatientAsync# Error: ", Thread.CurrentThread.ManagedThreadId, e.Message);
+			}
+		}
+
 		public async Task InsertPatientAsync (Patient patientItem)
 		{
 			try {                

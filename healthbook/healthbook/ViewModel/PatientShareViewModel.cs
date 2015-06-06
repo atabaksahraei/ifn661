@@ -47,6 +47,11 @@ namespace healthbook.ViewModel
 			RaisePropertyChanged ("Doc");
 		}
 
+		public async void SyncToCloud()
+		{
+			await Manager.Instance.UpdateAsync (Doc);
+
+		}
 
 		#region IxBeaconObserver implementation
 
