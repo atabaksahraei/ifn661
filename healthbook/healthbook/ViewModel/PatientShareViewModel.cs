@@ -23,6 +23,45 @@ namespace healthbook.ViewModel
 
 		public Doctor Doc { get; set; }
 
+		public bool IsDocVisible { get; set; }
+
+
+		//Ist grau
+		public bool IsDataUnSharedWithDoc {
+			get {
+				if (Doc != null && Doc.MyPatientIds != null && Me != null) {
+					List<string> docPatientList = new List<string> (Doc.MyPatientIds);
+					string tmpPatient = docPatientList.Where (item => item == Me.Id).FirstOrDefault ();
+
+					if (!String.IsNullOrEmpty (tmpPatient) || !IsDocVisible) {
+						return false;
+					} else {
+						return true;
+					}
+				} else if (Doc != null) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		}
+
+		public bool IsDataSharedWithDoc {
+			get {
+				if (Doc != null && Doc.MyPatientIds != null && Me != null) {
+					List<string> docPatientList = new List<string> (Doc.MyPatientIds);
+					string tmpPatient = docPatientList.Where (item => item == Me.Id).FirstOrDefault ();
+					if (String.IsNullOrEmpty (tmpPatient) || !IsDocVisible) {
+						return false;
+					} else {
+						return true;
+					}
+				} else {
+					return false;
+				}
+			}
+		}
+
 		iOSBeaconManager beaconManager;
 
 		#endregion
@@ -32,12 +71,13 @@ namespace healthbook.ViewModel
 		{
 			beaconManager = new iOSBeaconManager (this);
 			refresh ();
+			IsDocVisible = false;
 		}
 
 		public async void refresh ()
 		{
 			#if __IOS__
-			beaconManager.StopVitualBeacon();
+			beaconManager.StopVitualBeacon ();
 			beaconManager.AddBeaconMonitoring (Manager.BEACON_REGION_UUID, Manager.BEACON_REGION_NAME);
 			#endif
 
@@ -47,7 +87,7 @@ namespace healthbook.ViewModel
 			RaisePropertyChanged ("Doc");
 		}
 
-		public async void SyncToCloud()
+		public async void SyncToCloud ()
 		{
 			await Manager.Instance.UpdateAsync (Doc);
 
@@ -75,17 +115,23 @@ namespace healthbook.ViewModel
 				}
 				if (intersectedDocs.Count > 0) {
 					Doc = intersectedDocs.First ();
+					IsDocVisible = true;
 				} else {
-					Doc = new Doctor ();
+					//Doc = new Doctor ();
+					IsDocVisible = false;
 				}
 			} else {
-				Doc = new Doctor ();
+				//Doc = new Doctor ();
+				IsDocVisible = false;
 			}
 		
 			//if (!Doc.Equals (tmpDoc)) {
-				RaisePropertyChanged ("Doc");
+			RaisePropertyChanged ("Doc");
+			RaisePropertyChanged ("IsDataUnSharedWithDoc");
+			RaisePropertyChanged ("IsDataSharedWithDoc");
 			//}
 		}
+
 
 		public void RegionEntered (string regionName)
 		{
