@@ -13,6 +13,7 @@ namespace healthbook
 		{
 			Instance = this;
 			MainPage = new WelcomeView();
+			//MainPage = new TestListView();
 		}
 
 

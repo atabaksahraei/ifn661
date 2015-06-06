@@ -43,6 +43,7 @@ namespace healthbook
 
 		void OnTapGestureRecognizerTappedDoc (object sender, EventArgs args)
 		{
+			if(Vm.Doc != null)
 			DisplayAlert("Doc Tap", "Doc Tapped", "OK");
 
 		}

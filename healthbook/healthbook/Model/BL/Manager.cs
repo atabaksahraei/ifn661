@@ -25,7 +25,10 @@ namespace healthbook.Model.BL
 		#region var
 		const string applicationURL = @"https://healthbook.azure-mobile.net/";
 		const string gatewayURL = @"https://healthbook.azure-mobile.net/";
-		const string applicationKey = @"ALAIhtCvPwxlpXOSYsgyllwGIubTPh90";
+		const string applicationKey = @"uucsuQgYwrpeGWybtMCtvAkbVDSsrd32";
+//		const string applicationURL = @"https://healthbooktmp.azure-mobile.net/";
+//		const string gatewayURL = @"https://healthbooktmp.azure-mobile.net/";
+//		const string applicationKey = @"JrdcREVLmUjRWdlWqInKHmoyJktztE36";
 		const string localDbPath = "localstore.db";
 
 		private static Manager me = null;

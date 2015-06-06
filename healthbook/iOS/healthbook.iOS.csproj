@@ -188,6 +188,7 @@
     <BundleResource Include="Resources\ic_doc.png" />
     <BundleResource Include="Resources\ic_logo.png" />
     <BundleResource Include="Resources\ic_signal.png" />
+    <BundleResource Include="Resources\portrait.jpg" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

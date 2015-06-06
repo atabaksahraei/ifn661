@@ -41,6 +41,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)xBeacon\iOS\iOSBeaconManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)xBeacon\Entity\xBeaconRegion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\BL\TraceManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\TestListView.xaml.cs">
+      <DependentUpon>TestListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\TestListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
@@ -65,6 +69,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\DoctorOverviewView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\TestListView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
