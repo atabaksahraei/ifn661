@@ -55,10 +55,11 @@ namespace healthbook
 				string tmpPatient = docPatientList.Where (item => item == Vm.Me.Id).FirstOrDefault();
 				if (String.IsNullOrEmpty (tmpPatient)) {
 					Vm.Doc.AddPatient (Vm.Me.Id);
+					Vm.SyncToCloud ();
 					DisplayAlert ("Sharing", "Shared", "OK");
 				} else {
 
-					var action = await DisplayActionSheet ("ActionSheet: Send to?", "Cancel", null,  "remove Sharing", "Call", "SOS Call", "Message");
+					var action = await DisplayActionSheet ("Action?", "Cancel", null,  "remove Sharing", "Call", "E-Mail", "SOS Call", "Message");
 
 					switch (action) {
 					case "Call": 
