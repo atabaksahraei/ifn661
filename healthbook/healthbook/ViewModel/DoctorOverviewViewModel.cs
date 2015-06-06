@@ -10,7 +10,7 @@ using System.Collections.Specialized;
 namespace healthbook.ViewModel
 {
 
-	public class DoctorOverviewViewModel : ViewModelHealthBase, IxBeaconObserver
+	public class DoctorOverviewViewModel : ViewModelHealthBase, IxBeaconObserver, IUIObservable
 	{
 
 		#region const
@@ -28,7 +28,7 @@ namespace healthbook.ViewModel
 		{
 			Patients = new ObservableCollection<Patient> ();
 			Patients.CollectionChanged += OnCollectionChanged;
-
+			Manager.Instance.Observer = this;
 			#if __IOS__
 			beaconManager = new iOSBeaconManager (this);
 			//beaconManager.AddBeaconMonitoring (Manager.BEACON_REGION_UUID, Manager.BEACON_REGION_NAME);
@@ -62,6 +62,13 @@ namespace healthbook.ViewModel
 			beaconManager.StopVitualBeacon();
 			beaconManager.StartVitualBeacon(Manager.BEACON_REGION_UUID, Manager.BEACON_MAJOR_DOCTOR, 0, Manager.BEACON_REGION_NAME, -59);
 			await Manager.Instance.RefreshDataAsync ();
+			Redraw ();
+		}
+
+		#region IUIObservable implementation
+
+		public void Redraw ()
+		{
 			if (Manager.Instance.MeDoctor != null && Manager.Instance.MeDoctor.PidL != null) {
 				Patients = new ObservableCollection<Patient> ();
 				foreach (string patientId in Manager.Instance.MeDoctor.MyPatientIds) {
@@ -73,9 +80,11 @@ namespace healthbook.ViewModel
 			} else {
 				Patients = new ObservableCollection<Patient> ();
 			}
-			
+
 			RaisePropertyChanged ("Patients");
 		}
+
+		#endregion
 
 		#region IxBeaconObserver implementation
 

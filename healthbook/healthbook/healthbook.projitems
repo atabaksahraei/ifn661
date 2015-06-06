@@ -45,6 +45,7 @@
       <DependentUpon>TestListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\TestListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\BL\Interfaces\IUIObservable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Model\" />
@@ -57,6 +58,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)xBeacon\Interfaces\" />
     <Folder Include="$(MSBuildThisFileDirectory)xBeacon\iOS\" />
     <Folder Include="$(MSBuildThisFileDirectory)xBeacon\Android\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Model\BL\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\PatientView.xaml">
