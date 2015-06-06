@@ -85,6 +85,13 @@ namespace healthbook
 						UIKit.UIApplication.SharedApplication.OpenUrl(messageTo);
 						#endif
 						break;
+					case "E-Mail": 
+						#if __IOS__
+						string strMailTo = String.Format(@"mailto:{0}?Subject=Healthbook:{1}&Body=Hello", Vm.Doc.EMail, Vm.Me.Name, Vm.Doc.Name);
+						Device.OpenUri(new Uri(strMailTo));
+
+						#endif
+						break;
 					}
 
 				}
