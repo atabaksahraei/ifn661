@@ -13,7 +13,10 @@ namespace healthbookService.DataObjects
         public string Image { get; set; }
         public int BeaconMinor { get; set; }
         public string PidL { get; set; }
-        public string Test { get; set; }
+        public string PhoneNumber { get; set; }
+        public string SMSNumber { get; set; }
+        public string SOSNumber { get; set; }
+        public string EMail { get; set; }
 
 
         public Doctor()
