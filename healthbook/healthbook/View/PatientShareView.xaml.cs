@@ -33,7 +33,6 @@ namespace healthbook
 		{
 			BindingContext = new PatientShareViewModel ();
 
-
 			InitializeComponent ();
 			ImageCircleRenderer.Init ();
 
@@ -45,6 +44,12 @@ namespace healthbook
 
 		void OnTapGestureRecognizerTappedDoc (object sender, EventArgs args)
 		{
+			DocClickHelper ();
+
+		}
+
+		async void DocClickHelper()
+		{
 			if (Vm.Doc != null) {
 				List<String> docPatientList = new List<string>(Vm.Doc.MyPatientIds);
 				string tmpPatient = docPatientList.Where (item => item == Vm.Me.Id).FirstOrDefault();
@@ -52,12 +57,37 @@ namespace healthbook
 					Vm.Doc.AddPatient (Vm.Me.Id);
 					DisplayAlert ("Sharing", "Shared", "OK");
 				} else {
-					Vm.Doc.RemovePatient (Vm.Me.Id);
-					DisplayAlert ("Sharing", "Sharing removed", "OK");
-				}
-				 Vm.SyncToCloud ();
-			}
 
+					var action = await DisplayActionSheet ("ActionSheet: Send to?", "Cancel", null,  "remove Sharing", "Call", "SOS Call", "Message");
+
+					switch (action) {
+					case "Call": 
+						#if __IOS__
+						var call = Foundation.NSUrl.FromString(String.Format("tel:{0}", Vm.Doc.PhoneNumber));
+						UIKit.UIApplication.SharedApplication.OpenUrl(call);
+						#endif
+						break;
+					case "remove Sharing": 
+						Vm.Doc.RemovePatient (Vm.Me.Id);
+						Vm.SyncToCloud ();
+						DisplayAlert ("Sharing remove", "Sharing removed", "OK");
+						break;
+					case "SOS Call": 
+						#if __IOS__
+						var sosCall = Foundation.NSUrl.FromString(String.Format("tel:{0}", Vm.Doc.SOSNumber));
+						UIKit.UIApplication.SharedApplication.OpenUrl(sosCall);
+						#endif
+						break;
+					case "Message": 
+						#if __IOS__
+						var messageTo = Foundation.NSUrl.FromString(String.Format("sms:{0}", Vm.Doc.SMSNumber));
+						UIKit.UIApplication.SharedApplication.OpenUrl(messageTo);
+						#endif
+						break;
+					}
+
+				}
+			}
 		}
 
 
