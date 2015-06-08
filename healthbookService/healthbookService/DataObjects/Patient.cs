@@ -11,9 +11,10 @@ namespace healthbookService.DataObjects
         public string Name { get; set; }
         public string Image { get; set; }
         public int BeaconMinor { get; set; }
+        public string HealtData { get; set; }
         public string HealtDataSteps { get; set; }
         public string HealtDataSleepQuality { get; set; }
-        public string HealtDataDepression { get; set; }
+        public string HealtDataDepressionLevel { get; set; }
 
         public Patient()
         {

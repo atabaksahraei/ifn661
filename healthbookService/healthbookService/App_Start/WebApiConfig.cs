@@ -6,6 +6,7 @@ using System.Linq;
 using Microsoft.WindowsAzure.Mobile.Service;
 using healthbookService.DataObjects;
 using healthbookService.Models;
+using Newtonsoft.Json;
 
 namespace healthbookService
 {
@@ -44,11 +45,10 @@ namespace healthbookService
 
             List<Patient> patients = new List<Patient>()
             {
-                new Patient() { Name = "Mark", Image = "http://www.fatosdesconhecidos.com.br/wp-content/uploads/2014/11/06162144983530.jpg"},
-                new Patient() { Name = "Billy", Image = "https://financialpostcom.files.wordpress.com/2012/12/1212gates.jpg"},
-                new Patient() { Name = "Joker", Image = "http://vignette2.wikia.nocookie.net/batman/images/4/49/MyCard_The_Joker.jpg"},
-                new Patient() { Name = "Joker 2", Image = "http://vignette2.wikia.nocookie.net/batman/images/4/49/MyCard_The_Joker.jpg"},
-                new Patient() { Name = "Sheldon", Image = "http://img1.wikia.nocookie.net/__cb20110725161640/bigbangtheory/de/images/5/52/Sheldons_Superblick.jpg"}
+                new Patient() { Name = "Adam", Image = "http://www.atabak.de/ifn661/adam.jpg"},
+                new Patient() { Name = "Seymour", Image = "http://www.atabak.de/ifn661/sym.jpg"},
+                new Patient() { Name = "Josh", Image = "https://pbs.twimg.com/profile_images/3085413998/97782dfdce9bfeaf9e510bd991ab54c0.jpeg"},
+                new Patient() { Name = "Rebekah", Image = "https://studyerpdotorg.files.wordpress.com/2012/03/pc1503452.jpg"}
            };
 
             foreach (Patient patient in patients)
@@ -58,15 +58,22 @@ namespace healthbookService
 
             List<Doctor> docItems = new List<Doctor>
             {
-               new Doctor(){Name="Dr. Bonny", Degree= "B. Sc.", BeaconMinor = 0, Image="https://pbs.twimg.com/profile_images/3402491976/ebdcb1f3f9278fd540b2b6d2191e46b7_400x400.jpeg", PhoneNumber = "+61403226405", SOSNumber = "+61403226405", SMSNumber = "+61403226405", EMail = "atabak@sahraei.de"},
+               new Doctor(){Name="Dr. Bonny", Degree= "B. Sc.", BeaconMinor = 0, Image="http://www.atabak.de/ifn661/bonny.jpg", PhoneNumber = "+61469421579", SOSNumber = "+61469421579", SMSNumber = "+61469421579", EMail = "bonnyhbo@hotmail.com"},
                new Doctor(){Name="Dr. Dian", Degree= "M. Sc.", BeaconMinor = 1, Image="http://staff.qut.edu.au/files/avatars/398/48e931abc48c13958674c274ea285377-bpfull.jpg", PhoneNumber = "+61403226405", SOSNumber = "+61403226405", SMSNumber = "+61403226405", EMail = "atabak@sahraei.de"}
             };
 
             foreach (Doctor docItem in docItems)
             {
-                docItem.PidL = String.Format("[\"{0}\"]", patients.FirstOrDefault<Patient>().Id);
+                List<string> myIds = new List<string>();
+                foreach (Patient patient in patients)
+                {
+                    myIds.Add(patient.Id);
+                }
+                docItem.PidL = JsonConvert.SerializeObject(myIds);
                 context.Set<Doctor>().Add(docItem);
             }
+           Patient p = new Patient() { Name = "Atabak", Image = "http://www.atabak.de/ifn661/atabak.jpg" };
+            context.Set<Patient>().Add(p);
 
 
 
