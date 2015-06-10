@@ -72,6 +72,7 @@ namespace healthbook.ViewModel
 			beaconManager = new iOSBeaconManager (this);
 			refresh ();
 			IsDocVisible = false;
+			Me = Manager.Instance.MePatient;
 		}
 
 		public async void refresh ()

@@ -23,7 +23,7 @@ namespace healthbook
 				if(String.IsNullOrEmpty(PidL))
 					return null;
 
-				return JsonConvert.DeserializeObject <List<string>> (PidL);
+				return JsonConvert.DeserializeObject <List<string>> (PidL).AsEnumerable();
 			}
 		}
 

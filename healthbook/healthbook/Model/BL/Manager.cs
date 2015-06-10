@@ -19,7 +19,7 @@ namespace healthbook.Model.BL
 		public const int BEACON_MAJOR_DOCTOR = 1;
 		public const string CONTEXT = "Manager";
 		public const bool TRACE = true;
-		public const string TMP_PATIENT_NAME = "Atabak";
+		public const string TMP_PATIENT_NAME = "Adam";
 		public const string TMP_DOCTOR_NAME = "Dr. Bonny";
 
 		#endregion
